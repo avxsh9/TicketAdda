@@ -188,9 +188,10 @@
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, rgba(255, 153, 51, 0.7) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(19, 136, 8, 0.7) 100%);
-    color: #333;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a1a1a;
     font-weight: 500;
+    border: 2px solid rgba(255, 153, 51, 0.3);
 }
 
 .form-input::placeholder {
