@@ -643,8 +643,8 @@ h1, h2, h3, h4 {
 }
 .event-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--primary-300);
+    box-shadow: 0 20px 40px rgba(255, 153, 51, 0.15);
+    border-color: rgba(255, 153, 51, 0.3);
 }
 .event-image-container {
     position: relative;
