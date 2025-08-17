@@ -572,12 +572,9 @@ h1, h2, h3, h4 {
     background: white;
     border-radius: var(--radius-2xl);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: var(--transition-all);
-    border: 2px solid transparent;
-    background-image: linear-gradient(white, white), linear-gradient(45deg, #FF9933, #FFFFFF, #138808);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
+    border: 1px solid rgba(255, 153, 51, 0.1);
     cursor: pointer;
     position: relative;
 }
