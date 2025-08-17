@@ -419,12 +419,22 @@ h1, h2, h3, h4 {
     letter-spacing: var(--tracking-tighter);
 }
 .gradient-text {
-    background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
+    background: linear-gradient(135deg, #CC5200 0%, #1a1a1a 30%, #1a1a1a 70%, #0A5D03 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: block;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.gradient-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 .hero-description {
     font-size: var(--text-xl);
