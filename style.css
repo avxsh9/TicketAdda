@@ -429,7 +429,8 @@ h1, h2, h3, h4 {
 .hero-description {
     font-size: var(--text-xl);
     margin-bottom: var(--space-10);
-    color: var(--gray-300);
+    color: #2d2d2d;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 .hero-search-wrapper {
     margin-bottom: var(--space-10);
