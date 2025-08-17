@@ -449,15 +449,16 @@ h1, h2, h3, h4 {
 }
 .search-container {
     display: flex;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: var(--radius-2xl);
     padding: var(--space-2);
     max-width: 600px;
     margin: 0 auto;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: var(--shadow-lg);
+    border: 2px solid rgba(255, 153, 51, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     align-items: center;
     gap: var(--space-3);
+    backdrop-filter: blur(10px);
 }
 .search-icon { color: var(--gray-400); margin-left: var(--space-4); font-size: var(--text-lg); }
 .search-input {
