@@ -365,11 +365,12 @@ h1, h2, h3, h4 {
     letter-spacing: var(--tracking-tighter);
 }
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary-400) 0%, var(--secondary-400) 100%);
+    background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .hero-description {
     font-size: var(--text-xl);
