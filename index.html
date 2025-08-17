@@ -3,564 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicketAdda - The Future of Event Ticketing</title>
-    <meta name="description" content="Buy and sell tickets for concerts, sports, movies, and events across India. Reimagined with a futuristic, secure, and reliable ticket resale platform.">
-    <meta name="keywords" content="event tickets, concerts, sports, movies, ticket resale, India, marketplace">
-
+    <title>TicketAdda - India's Premier Event Ticket Marketplace</title>
+    <meta name="description" content="Buy and sell tickets for concerts, sports, movies, and events across India. Safe, secure, and guaranteed authentic tickets.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
-    
     <link rel="icon" type="image/png" href="https://i.imgur.com/g8e1m5b.png">
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-brand">
-                <div class="brand-logo">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-brand">
                     <i class="fas fa-ticket-alt"></i>
+                    <span>TicketAdda</span>
+                </a>
+                
+                <div class="nav-search">
+                    <!-- <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search events, artists, teams, or venues" id="mainSearch">
+                        <button class="search-btn">Search</button>
+                    </div> -->
                 </div>
-                <span class="brand-text">TicketAdda</span>
-            </a>
-            
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
-                    <li class="nav-item"><a href="#categories" class="nav-link">Categories</a></li>
-                    <li class="nav-item"><a href="#safety" class="nav-link">Safety</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
+                
+                <div class="nav-menu">
+                    <a href="events.html" class="nav-link">Sports</a>
+                    <a href="events.html" class="nav-link">Concerts</a>
+                    <a href="events.html" class="nav-link">Theater</a>
+                    <a href="sell.html" class="nav-link sell-link">
+                        <i class="fas fa-plus-circle"></i>
+                        Sell
+                    </a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="help.html" class="nav-link">Help</a>
+                    <a href="login.html" class="btn-login">Sign in</a>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            
-            <div class="nav-actions">
-                <a href="login.html" class="btn-login">Login</a>
-                <a href="signup.html" class="btn-cta">Sign Up</a>
-            </div>
-            
-            <div class="nav-toggle" id="hamburger">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section class="hero-section" id="home">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="hero-background">
-            <div class="hero-gradient"></div>
-            <div class="hero-particles">
-                <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
-            </div>
+            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1920&h=800&fit=crop" alt="Concert crowd">
+            <div class="hero-overlay"></div>
         </div>
         
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i>
-                    <span>Trusted by 250,000+ Happy Customers</span>
-                </div>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">Your ticket to the best live experiences</h1>
+                <p class="hero-subtitle">Buy and sell tickets for thousands of amazing events across India</p>
                 
-                <h1 class="hero-title">
-                    India's Premier Ticket
-                    <span class="gradient-text" data-text="Marketplace">Marketplace</span>
-                </h1>
-                
-                <p class="hero-description">
-                    Buy and sell tickets for concerts, sports, movies, and more. 
-                    Safe transactions, verified sellers, and the best prices guaranteed.
-                </p>
-                
-                <div class="hero-search-wrapper">
+                <div class="hero-search">
                     <div class="search-container">
-                        <i class="fas fa-search search-icon"></i>
-                        <input type="text" placeholder="Search for events, artists, or teams..." class="search-input" id="heroSearch">
-                        <button class="search-btn">Find Tickets</button>
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for events, artists, teams, or venues" class="hero-search-input">
+                        <button class="hero-search-btn">Find tickets</button>
                     </div>
                 </div>
                 
-                <div class="hero-actions">
-                    <a href="signup.html" class="btn-primary btn-large">
-                        <i class="fas fa-user-plus"></i>
-                        Join TicketAdda
-                    </a>
-                    <a href="#categories" class="btn-secondary btn-large">
-                        <i class="fas fa-compass"></i>
-                        Browse Events
-                    </a>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="250000">0</div>
-                        <div class="stat-label">Happy Customers</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="15000">0</div>
-                        <div class="stat-label">Events Listed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="50">0</div>
-                        <div class="stat-label">Cities Covered</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="99.8" data-suffix="%">0</div>
-                        <div class="stat-label">Success Rate</div>
-                    </div>
+                <div class="hero-categories">
+                    <button class="category-pill active" data-category="all">All events</button>
+                    <button class="category-pill" data-category="sports">Sports</button>
+                    <button class="category-pill" data-category="concerts">Concerts</button>
+                    <button class="category-pill" data-category="theater">Theater</button>
+                    <button class="category-pill" data-category="comedy">Comedy</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="overview-section" id="categories">
+    <!-- Popular Cities -->
+    <section class="popular-cities">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Popular Categories</h2>
-                <p class="section-subtitle">Find tickets for the hottest events across India</p>
-            </div>
-            
-            <div class="category-grid">
-                <div class="category-card" data-category="concerts">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&crop=entropy&cs=tinysrgb" alt="Concerts">
+            <h2>Popular destinations</h2>
+            <div class="cities-grid">
+                <a href="events.html?city=mumbai" class="city-card">
+                    <img src="https://images.unsplash.com/photo-1595658658481-d53d3f999875?w=400&h=250&fit=crop" alt="Mumbai">
+                    <div class="city-info">
+                        <h3>Mumbai</h3>
+                        <p>1,234 events</p>
                     </div>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Concerts
-                            <i class="fas fa-arrow-right"></i>
-                        </h3>
-                        <p class="card-description">1,200+ Events</p>
+                </a>
+                <a href="events.html?city=delhi" class="city-card">
+                    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=250&fit=crop" alt="Delhi">
+                    <div class="city-info">
+                        <h3>Delhi</h3>
+                        <p>987 events</p>
                     </div>
-                </div>
-                <div class="category-card" data-category="sports">
-                    <div class="category-image">
-                        <img src="https://wallpapers.com/images/hd/sports-4k-6s11jkbxfye9nrbh.jpg" alt="Sports">
+                </a>
+                <a href="events.html?city=bangalore" class="city-card">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/vidhana-soudha-bangalore-karnataka-hero?qlt=82&ts=1742199603184" alt="Bangalore">
+                    <div class="city-info">
+                        <h3>Bangalore</h3>
+                        <p>756 events</p>
                     </div>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Sports
-                            <i class="fas fa-arrow-right"></i>
-                        </h3>
-                        <p class="card-description">800+ Events</p>
+                </a>
+                <a href="events.html?city=pune" class="city-card">
+                    <img src="https://media.holidify.com/images/cmsuploads/compressed/baps-shree-swaminarayan-mandir-pune-tourism-entry-fee-timings-holidays-reviews-header_20250130093022.jpg" alt="Pune">
+                    <div class="city-info">
+                        <h3>Pune</h3>
+                        <p>432 events</p>
                     </div>
-                </div>
-                <div class="category-card" data-category="movies">
-                    <div class="category-image">
-                        <img src="https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg" alt="Movies">
+                </a>
+                <a href="events.html?city=hyderabad" class="city-card">
+                    <img src="https://www.holidify.com/images/bgImages/HYDERABAD.jpg" alt="Hyderabad">
+                    <div class="city-info">
+                        <h3>Hyderabad</h3>
+                        <p>398 events</p>
                     </div>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Movies
-                            <i class="fas fa-arrow-right"></i>
-                        </h3>
-                        <p class="card-description">2,500+ Shows</p>
+                </a>
+                <a href="events.html?city=chennai" class="city-card">
+                    <img src="https://www.holidify.com/images/bgImages/CHENNAI%20.jpg" alt="Chennai">
+                    <div class="city-info">
+                        <h3>Chennai</h3>
+                        <p>312 events</p>
                     </div>
-                </div>
-                <div class="category-card" data-category="theater">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=400&h=300&fit=crop&crop=entropy&cs=tinysrgb" alt="Theater">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Theater & Plays
-                            <i class="fas fa-arrow-right"></i>
-                        </h3>
-                        <p class="card-description">450+ Shows</p>
-                    </div>
-                </div>
-                <div class="category-card" data-category="comedy">
-                    <div class="category-image">
-                        <img src="https://i.ytimg.com/vi/dtaJzUbQS7E/maxresdefault.jpg" alt="Comedy">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Comedy Shows
-                            <i class="fas fa-arrow-right"></i>
-                        </h3>
-                        <p class="card-description">300+ Shows</p>
-                    </div>
-                </div>
-                <div class="category-card" data-category="festivals">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400&h=300&fit=crop&crop=entropy&cs=tinysrgb" alt="Festivals">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">
-                            Festivals
-                            <i class="fas fa-arrow-right"></i>
-                        </h3>
-                        <p class="card-description">200+ Events</p>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
-    
-    <section class="features-section" id="trending">
+
+    <!-- Trending Events -->
+    <section class="trending-events">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Trending Events</h2>
-                <p class="section-subtitle">Hot tickets selling fast across major Indian cities</p>
+                <h2>Trending now</h2>
+                <a href="events.html" class="view-all-btn">View all events</a>
             </div>
             
             <div class="events-grid">
                 <div class="event-card">
-                    <div class="event-image-container">
-                        <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=350&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="Arijit Singh Concert">
-                        <div class="event-badge hot-selling">Hot Selling</div>
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop" alt="Arijit Singh Concert">
+                        <div class="event-price">From ₹2,500</div>
                     </div>
-                    <div class="event-content">
-                        <h3 class="event-title">Arijit Singh Live in Mumbai</h3>
-                        <p class="event-meta"><i class="fas fa-map-marker-alt"></i> NSCI Dome, Mumbai</p>
-                        <p class="event-meta"><i class="fas fa-calendar-alt"></i> November 15, 2025</p>
-                        <div class="event-pricing">
-                            <span class="price-label">From</span>
-                            <span class="price-amount">₹2,500</span>
-                        </div>
+                    <div class="event-details">
+                        <div class="event-category">Concert</div>
+                        <h3 class="event-title">Arijit Singh Live</h3>
+                        <p class="event-venue">NSCI Dome • Mumbai</p>
+                        <p class="event-date">Sat, Nov 15 • 7:00 PM</p>
                         <div class="event-stats">
-                            <span><i class="fas fa-ticket-alt"></i> 0 left</span>
-                            <span><i class="fas fa-users"></i> 0 sellers</span>
-                        </div>
-                        <button class="btn-plan">View Tickets</button>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <div class="event-image-container">
-                        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=350&h=200&fit=crop&crop=entropy&cs=tinysrgb" alt="IPL Match">
-                        <div class="event-badge limited-stock">Limited Stock</div>
-                    </div>
-                    <div class="event-content">
-                        <h3 class="event-title">MI vs CSK - IPL Finals</h3>
-                        <p class="event-meta"><i class="fas fa-map-marker-alt"></i> Wankhede, Mumbai</p>
-                        <p class="event-meta"><i class="fas fa-calendar-alt"></i> April 20, 2026</p>
-                        <div class="event-pricing">
-                            <span class="price-label">From</span>
-                            <span class="price-amount">₹3,000</span>
-                        </div>
-                        <div class="event-stats">
-                            <span><i class="fas fa-ticket-alt"></i> 0 left</span>
-                            <span><i class="fas fa-users"></i> 0 sellers</span>
-                        </div>
-                        <button class="btn-plan">View Tickets</button>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <div class="event-image-container">
-                        <img src="https://sm.mashable.com/t/mashable_me/photo/default/33-42_2x9m.1248.jpg" alt="Bollywood Concert">
-                        <div class="event-badge new-listed">New Listed</div>
-                    </div>
-                    <div class="event-content">
-                        <h3 class="event-title">Bollywood Concert</h3>
-                        <p class="event-meta"><i class="fas fa-map-marker-alt"></i> Pragati Maidan, Delhi</p>
-                        <p class="event-meta"><i class="fas fa-calendar-alt"></i> December 25, 2024</p>
-                        <div class="event-pricing">
-                            <span class="price-label">From</span>
-                            <span class="price-amount">₹1,800</span>
-                        </div>
-                        <div class="event-stats">
-                            <span><i class="fas fa-ticket-alt"></i> 0 left</span>
-                            <span><i class="fas fa-users"></i> 0 sellers</span>
-                        </div>
-                        <button class="btn-plan">View Tickets</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works-section" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">How TicketAdda Works</h2>
-                <p class="section-subtitle">Simple, safe, and secure ticket transactions in 3 easy steps</p>
-            </div>
-            
-            <div class="process-tabs">
-                <button class="tab-button active" data-tab="buyers">For Buyers</button>
-                <button class="tab-button" data-tab="sellers">For Sellers</button>
-            </div>
-            
-            <div class="tab-content active" id="buyers-tab">
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-icon"><i class="fas fa-search"></i></div>
-                        <div class="step-number">01</div>
-                        <h3 class="step-title">Search & Discover</h3>
-                        <p class="step-description">Find the perfect event using our smart search. Filter by city, date, and price range.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-icon"><i class="fas fa-credit-card"></i></div>
-                        <div class="step-number">02</div>
-                        <h3 class="step-title">Secure Payment</h3>
-                        <p class="step-description">Pay securely using UPI, cards, or net banking. Your money is held safely with our escrow protection.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-icon"><i class="fas fa-ticket-alt"></i></div>
-                        <div class="step-number">03</div>
-                        <h3 class="step-title">Get Your Tickets</h3>
-                        <p class="step-description">Receive e-tickets instantly via email and our app. All tickets are verified for authenticity.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="sellers-tab">
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-icon"><i class="fas fa-plus-circle"></i></div>
-                        <div class="step-number">01</div>
-                        <h3 class="step-title">List Your Tickets</h3>
-                        <p class="step-description">Easily list your tickets in under 60 seconds. Set your price or use our smart pricing suggestions.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-icon"><i class="fas fa-handshake"></i></div>
-                        <div class="step-number">02</div>
-                        <h3 class="step-title">Connect with Buyers</h3>
-                        <p class="step-description">Get notified when a buyer is interested. Our platform facilitates secure communication.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-icon"><i class="fas fa-money-bill-wave"></i></div>
-                        <div class="step-number">03</div>
-                        <h3 class="step-title">Get Paid Instantly</h3>
-                        <p class="step-description">Once the buyer confirms, payment is released to your bank account instantly. Low commission rates.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="why-section" id="safety">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Your Safety is Our Priority</h2>
-                <p class="section-subtitle">We've built multiple layers of security to ensure every transaction is safe and secure.</p>
-            </div>
-            <div class="why-content">
-                <div class="why-text">
-                    <h3>The TicketAdda Guarantee</h3>
-                    <p>We are committed to creating the safest and most reliable ticket marketplace in India. Our multi-layered security protocol ensures peace of mind for both buyers and sellers.</p>
-                    <div class="safety-features-list">
-                        <div class="benefit-item">
-                            <i class="fas fa-check"></i> <span><strong>Verified Sellers:</strong> Aadhaar ID and phone verification for all sellers.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check"></i> <span><strong>Secure Payments:</strong> Razorpay with AES-128-bit encryption for all user data.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check"></i> <span><strong>Ticket Authenticity:</strong> AI-powered verification and manual review of every ticket.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check"></i> <span><strong>Money-Back Guarantee:</strong> 100% refund except transaction charge. if tickets are invalid or event is cancelled.</span>
+                            <span class="tickets-available">234 tickets available</span>
                         </div>
                     </div>
-                </div>
-                <div class="why-visual">
-                    <div class="safety-illustration-container">
-                         <img src="cybersecurity-shield-with-padlock.jpg" alt="Security Shield Illustration">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stories-section" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Success Stories</h2>
-                <p class="section-subtitle">Real experiences from our trusted community</p>
-            </div>
-            
-            <div class="stories-grid">
-                <div class="story-card">
-                    <div class="story-header">
-                        <div class="story-avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8MxZTKsUBL0rS0y-3IVMzB6NJzEhpsNTDfw&s" alt="Rahul Kumar Image"></div>
-                        <div class="story-info">
-                            <h4 class="story-name">Rahul Kumar</h4><p class="story-title">Mumbai, Maharashtra</p>
-                            <div class="story-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        </div>
-                    </div>
-                    <div class="story-content"><p class="story-text">"I sold my extra IPL tickets at a great price. The process was super smooth and I got paid instantly. Highly recommend TicketAdda!"</p></div>
                 </div>
                 
-                <div class="story-card">
-                    <div class="story-header">
-                        <div class="story-avatar"><img src="https://i.pinimg.com/736x/c0/12/36/c012362145cf0948449a5efdf8a9cdc9.jpg" alt="Priya Sharma"></div>
-                        <div class="story-info">
-                            <h4 class="story-name">Priya Sharma</h4><p class="story-title">Delhi, NCR</p>
-                            <div class="story-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=300&h=200&fit=crop" alt="IPL Match">
+                        <div class="event-price">From ₹1,200</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Sports</div>
+                        <h3 class="event-title">MI vs CSK - IPL</h3>
+                        <p class="event-venue">Wankhede Stadium • Mumbai</p>
+                        <p class="event-date">Sun, Apr 20 • 3:30 PM</p>
+                        <div class="event-stats">
+                            <span class="tickets-available">89 tickets available</span>
                         </div>
                     </div>
-                    <div class="story-content"><p class="story-text">"Found amazing tickets for Arijit Singh's concert at 30% less than other platforms. The e-tickets were genuine and worked perfectly."</p></div>
                 </div>
-
-                <div class="story-card">
-                    <div class="story-header">
-                        <div class="story-avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxHVvMvazd5OSiqE1enF591cZJa4M9z0EKrA&s" alt="Palak Singh Image"></div>
-                        <div class="story-info">
-                            <h4 class="story-name">Palak Singh</h4><p class="story-title">Bangalore, Karnataka</p>
-                            <div class="story-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop" alt="Bollywood Concert">
+                        <div class="event-price">From ₹1,800</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Concert</div>
+                        <h3 class="event-title">Bollywood Night Live</h3>
+                        <p class="event-venue">Gachibowli Stadium • Hyderabad</p>
+                        <p class="event-date">Fri, Dec 8 • 8:00 PM</p>
+                        <div class="event-stats">
+                            <span class="tickets-available">156 tickets available</span>
                         </div>
                     </div>
-                    <div class="story-content"><p class="story-text">"The best platform for buying and selling tickets in India. Customer support is excellent and they helped me throughout the process."</p></div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=300&h=200&fit=crop" alt="Theater Show">
+                        <div class="event-price">From ₹800</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Theater</div>
+                        <h3 class="event-title">Mughal-E-Azam Musical</h3>
+                        <p class="event-venue">NCPA • Mumbai</p>
+                        <p class="event-date">Sat, Nov 30 • 7:30 PM</p>
+                        <div class="event-stats">
+                            <span class="tickets-available">67 tickets available</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="overview-section" id="about">
-         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About TicketAdda</h2>
-                <p class="section-subtitle">Our mission to make live entertainment accessible and safe for everyone in India.</p>
-            </div>
-            <div class="about-content-grid">
-                <div class="about-text-content">
-                    <h3>Pioneering a Trusted Marketplace</h3>
-                    <p>Founded in 2025, TicketAdda set out to transform the way India buys and sells event tickets. We saw the gap — people needed a safe, transparent, and reliable place to trade tickets for concerts, sports matches, festivals, and more.</p>
-                    <p>  With cutting-edge security measures, clear pricing, and unmatched customer support, we’ve built India’s most trusted ticket resale platform. Whether you’re looking to grab last-minute seats or sell your extra tickets with confidence, TicketAdda makes the process simple, secure, and stress-free.</p>
-                    <p>At TicketAdda, every ticket is more than just entry to an event — it’s a pass to unforgettable memories.</p>
-                </div>
-                 <div class="about-image-content">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&crop=entropy&cs=tinysrgb" alt="Team Working">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section" id="contact">
+    <!-- Sports Section -->
+    <section class="sports-section">
         <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="contact-title">Get in Touch</h2>
-                    <p class="contact-description">Have questions? We're here to help 24/7. Our team is ready to assist you with any inquiry.</p>
-                    <div class="contact-methods">
-                        <div class="contact-method"><div class="method-icon"><i class="fas fa-phone"></i></div><div class="method-info"><h4>Call Us</h4><p>+91-987116873X</p></div></div>
-                        <div class="contact-method"><div class="method-icon"><i class="fas fa-envelope"></i></div><div class="method-info"><h4>Email Us</h4><p>support@TicketAdda.in</p></div></div>
-                        <div class="contact-method"><div class="method-icon"><i class="fas fa-comments"></i></div><div class="method-info"><h4>Live Chat</h4><p>Available 24/7 on our App</p></div></div>
+            <div class="section-header">
+                <h2>Sports events</h2>
+                <a href="events.html?category=sports" class="view-all-btn">View all sports</a>
+            </div>
+            
+            <div class="sports-categories">
+                <div class="sport-category">
+                    <div class="sport-icon">
+                        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=100&h=100&fit=crop" alt="Cricket">
                     </div>
+                    <h3>Cricket</h3>
+                    <p>IPL, Test matches, ODI</p>
+                    <span class="event-count">234 events</span>
                 </div>
-                <div class="contact-form-wrapper">
-                    <form class="form" id="contactForm">
-                        <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
-                        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required></div>
-                        <div class="form-group"><label for="subject">Subject</label><select id="subject" name="subject" required><option value="">Select a topic</option><option value="general">General Inquiry</option><option value="support">Customer Support</option><option value="seller">Become a Seller</option><option value="partnership">Partnership</option></select></div>
-                        <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
-                        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-                    </form>
+                <div class="sport-category">
+                    <div class="sport-icon">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=100&h=100&fit=crop" alt="Football">
+                    </div>
+                    <h3>Football</h3>
+                    <p>ISL, I-League</p>
+                    <span class="event-count">89 events</span>
+                </div>
+                <div class="sport-category">
+                    <div class="sport-icon">
+                        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=100&h=100&fit=crop" alt="Kabaddi">
+                    </div>
+                    <h3>Kabaddi</h3>
+                    <p>Pro Kabaddi League</p>
+                    <span class="event-count">45 events</span>
+                </div>
+                <div class="sport-category">
+                    <div class="sport-icon">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0df20d75934?w=100&h=100&fit=crop" alt="Badminton">
+                    </div>
+                    <h3>Badminton</h3>
+                    <p>BWF tournaments</p>
+                    <span class="event-count">23 events</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Sell Tickets CTA -->
+    <section class="sell-cta">
+        <div class="container">
+            <div class="sell-content">
+                <div class="sell-text">
+                    <h2>Have tickets to sell?</h2>
+                    <p>Turn your extra tickets into cash. List for free and get paid fast.</p>
+                    <ul class="sell-benefits">
+                        <li><i class="fas fa-check"></i> List for free in under 60 seconds</li>
+                        <li><i class="fas fa-check"></i> Set your own prices</li>
+                        <li><i class="fas fa-check"></i> Get paid within 24 hours</li>
+                        <li><i class="fas fa-check"></i> Our guarantee protects buyers</li>
+                    </ul>
+                    <a href="sell.html" class="btn-primary">Start selling</a>
+                </div>
+                <div class="sell-image">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=400&fit=crop" alt="Sell tickets">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Safety -->
+    <section class="trust-section">
+        <div class="container">
+            <h2>Your safety is our priority</h2>
+            <div class="trust-features">
+                <div class="trust-feature">
+                    <div class="trust-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>TicketAdda Guarantee</h3>
+                    <p>Every order is backed by our guarantee. Get your money back if your event is cancelled and not rescheduled.</p>
+                </div>
+                <div class="trust-feature">
+                    <div class="trust-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Verified sellers</h3>
+                    <p>We require sellers to verify their identity and list only authentic tickets.</p>
+                </div>
+                <div class="trust-feature">
+                    <div class="trust-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure payments</h3>
+                    <p>Your payment information is encrypted and secure. We support UPI, cards, and net banking.</p>
+                </div>
+                <div class="trust-feature">
+                    <div class="trust-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 support</h3>
+                    <p>Our customer service team is here to help you every step of the way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-brand">
-                        <div class="brand-logo"><i class="fas fa-ticket-alt"></i></div><span class="brand-text">TicketAdda</span>
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>TicketAdda</span>
                     </div>
-                    <p class="footer-description">India's most trusted ticket marketplace.</p>
+                    <p>India's most trusted ticket marketplace for concerts, sports, theater, and more.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+                
                 <div class="footer-section">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li><li><a href="#how-it-works">How It Works</a></li><li><a href="#categories">Categories</a></li><li><a href="#about">About Us</a></li>
+                    <h4>Buy tickets</h4>
+                    <ul>
+                        <li><a href="events.html?category=concerts">Concerts</a></li>
+                        <li><a href="events.html?category=sports">Sports</a></li>
+                        <li><a href="events.html?category=theater">Theater</a></li>
+                        <li><a href="events.html?category=comedy">Comedy</a></li>
+                        <li><a href="events.html">All events</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h4 class="footer-title">Categories</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Concerts</a></li><li><a href="#">Sports</a></li><li><a href="#">Movies</a></li><li><a href="#">Theater</a></li>
+                    <h4>Sell tickets</h4>
+                    <ul>
+                        <li><a href="sell.html">Sell tickets</a></li>
+                        <li><a href="help.html">How to sell</a></li>
+                        <li><a href="help.html">Pricing</a></li>
+                        <li><a href="help.html">Seller protection</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h4 class="footer-title">Support</h4>
-                    <ul class="footer-links">
-                        <li><a href="#contact">Contact Us</a></li><li><a href="#">Help Center</a></li><li><a href="#">Seller Guide</a></li><li><a href="#">Buyer Protection</a></li>
-                    </ul>
-                </div>
-                 <div class="footer-section">
-                    <h4 class="footer-title">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Terms of Service</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Refund Policy</a></li>
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help center</a></li>
+                        <li><a href="help.html">Contact us</a></li>
+                        <li><a href="help.html">TicketAdda Guarantee</a></li>
+                        <li><a href="terms.html">Terms of use</a></li>
+                        <li><a href="privacy.html">Privacy policy</a></li>
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
+                <p>&copy; 2024 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="help.html">Help</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('loginModal')">&times;</span>
-            <div class="modal-header">
-                <h2>Login to TicketAdda</h2>
-            </div>
-            <div class="modal-body">
-                <form id="loginForm" class="form">
-                    <div class="form-group"><label for="loginEmail">Email or Phone</label><input type="text" id="loginEmail" required></div>
-                    <div class="form-group"><label for="loginPassword">Password</label><input type="password" id="loginPassword" required></div>
-                    <button type="submit" class="btn-submit">Login</button>
-                </form>
-                <p class="modal-switch">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up</a></p>
-            </div>
-        </div>
-    </div>
-    
-    <div id="signupModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('signupModal')">&times;</span>
-            <div class="modal-header">
-                <h2>Join TicketAdda</h2>
-            </div>
-            <div class="modal-body">
-                <form id="signupForm" class="form">
-                    <div class="form-group"><label for="signupName">Full Name</label><input type="text" id="signupName" required></div>
-                    <div class="form-group"><label for="signupEmail">Email Address</label><input type="email" id="signupEmail" required></div>
-                    <div class="form-group"><label for="signupPhone">Phone Number</label><input type="tel" id="signupPhone" required></div>
-                    <div class="form-group"><label for="signupPassword">Create Password</label><input type="password" id="signupPassword" required></div>
-                    <button type="submit" class="btn-submit">Create Account</button>
-                </form>
-                <p class="modal-switch">Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login</a></p>
-            </div>
-        </div>
-    </div>
-    
-    <div id="sellModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('sellModal')">&times;</span>
-            <div class="modal-header">
-                <h2>Sell Your Tickets</h2>
-            </div>
-            <div class="modal-body">
-                <form id="sellForm" class="form">
-                    <div class="form-group"><label for="eventName">Event Name</label><input type="text" id="eventName" placeholder="e.g., Arijit Singh Live Concert" required></div>
-                    <div class="form-group"><label for="eventDate">Event Date</label><input type="date" id="eventDate" required></div>
-                    <div class="form-group"><label for="ticketCount">Quantity</label><select id="ticketCount" required><option value="">Select quantity</option><option value="1">1 Ticket</option><option value="2">2 Tickets</option><option value="3">3 Tickets</option><option value="4">4 Tickets</option></select></div>
-                    <div class="form-group"><label for="sellingPrice">Price (per ticket)</label><input type="number" id="sellingPrice" placeholder="₹" required></div>
-                    <button type="submit" class="btn-submit">List My Tickets</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <button class="back-to-top" id="back-to-top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-    
     <script src="script.js"></script>
 </body>
 </html>

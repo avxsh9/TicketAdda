@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Indians vs Chennai Super Kings - TicketAdda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="event-detail.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-brand">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span>TicketAdda</span>
+                </a>
+                
+                <div class="nav-search">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search events, artists, teams, or venues" id="mainSearch">
+                        <button class="search-btn">Search</button>
+                    </div>
+                </div>
+                
+                <div class="nav-menu">
+                    <a href="events.html" class="nav-link">Sports</a>
+                    <a href="events.html" class="nav-link">Concerts</a>
+                    <a href="events.html" class="nav-link">Theater</a>
+                    <a href="sell.html" class="nav-link sell-link">
+                        <i class="fas fa-plus-circle"></i>
+                        Sell
+                    </a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="help.html" class="nav-link">Help</a>
+                    <a href="login.html" class="btn-login">Sign in</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="events.html?category=sports">Sports</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="events.html?category=cricket">Cricket</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Mumbai Indians vs Chennai Super Kings</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Event Header -->
+    <section class="event-header">
+        <div class="container">
+            <div class="event-header-content">
+                <div class="event-info">
+                    <div class="event-category">
+                        <span class="category-badge">Cricket</span>
+                        <span class="event-type">IPL Match</span>
+                    </div>
+                    
+                    <h1 class="event-title">Mumbai Indians vs Chennai Super Kings</h1>
+                    
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <strong>Sunday, April 20, 2025</strong>
+                                <span>3:30 PM IST</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Wankhede Stadium</strong>
+                                <span>Mumbai, Maharashtra</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-thermometer-half"></i>
+                            <div>
+                                <strong>Weather</strong>
+                                <span>28°C, Partly Cloudy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">89</span>
+                            <span class="stat-label">Tickets Available</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">₹1,200</span>
+                            <span class="stat-label">Starting Price</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number trending">
+                                <i class="fas fa-fire"></i>
+                                Trending
+                            </span>
+                            <span class="stat-label">Popular Event</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-image">
+                    <img src="https://cricholic.in/wp-content/uploads/2025/04/IPL-2025-Match-38-MI-vs-CSK.jpg" alt="IPL Match">
+                    <!-- <div class="teams-overlay">
+                        <div class="team">
+                            <img src="https://logos-world.net/wp-content/uploads/2020/06/Mumbai-Indians-Logo.png" alt="Mumbai Indians" class="team-logo">
+                            <span>MI</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="https://logos-world.net/wp-content/uploads/2020/06/Chennai-Super-Kings-Logo.png" alt="Chennai Super Kings" class="team-logo">
+                            <span>CSK</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Tickets Section -->
+                <div class="tickets-section">
+                    <div class="section-header">
+                        <h2>Select your tickets</h2>
+                        <div class="view-toggle">
+                            <button class="toggle-btn active" data-view="list">
+                                <i class="fas fa-list"></i>
+                                List View
+                            </button>
+                            <button class="toggle-btn" data-view="seating">
+                                <i class="fas fa-th"></i>
+                                Seating Chart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- List View -->
+                    <div class="tickets-view active" id="listView">
+                        <div class="tickets-list">
+                            <div class="ticket-row">
+                                <div class="section-info">
+                                    <h3>General Admission</h3>
+                                    <p>Standing room, General entry</p>
+                                    <span class="section-note">Mobile entry only</span>
+                                </div>
+                                <div class="ticket-details">
+                                    <div class="price">₹1,200</div>
+                                    <div class="availability">12 available</div>
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn minus" data-section="general">-</button>
+                                        <span class="qty-display" data-section="general">0</span>
+                                        <button class="qty-btn plus" data-section="general">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ticket-row">
+                                <div class="section-info">
+                                    <h3>East Stand Lower</h3>
+                                    <p>Great view, Behind wicket</p>
+                                    <span class="section-note">E-ticket available</span>
+                                </div>
+                                <div class="ticket-details">
+                                    <div class="price">₹2,800</div>
+                                    <div class="availability">8 available</div>
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn minus" data-section="east-lower">-</button>
+                                        <span class="qty-display" data-section="east-lower">0</span>
+                                        <button class="qty-btn plus" data-section="east-lower">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ticket-row">
+                                <div class="section-info">
+                                    <h3>West Stand Upper</h3>
+                                    <p>Premium view, Center field</p>
+                                    <span class="section-note">Best value</span>
+                                </div>
+                                <div class="ticket-details">
+                                    <div class="price">₹4,200</div>
+                                    <div class="availability">15 available</div>
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn minus" data-section="west-upper">-</button>
+                                        <span class="qty-display" data-section="west-upper">0</span>
+                                        <button class="qty-btn plus" data-section="west-upper">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ticket-row premium">
+                                <div class="section-info">
+                                    <h3>VIP Hospitality Box</h3>
+                                    <p>Premium experience, Food included</p>
+                                    <span class="section-note">Limited availability</span>
+                                </div>
+                                <div class="ticket-details">
+                                    <div class="price">₹8,500</div>
+                                    <div class="availability">3 available</div>
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn minus" data-section="vip">-</button>
+                                        <span class="qty-display" data-section="vip">0</span>
+                                        <button class="qty-btn plus" data-section="vip">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seating Chart View -->
+                    <div class="tickets-view" id="seatingView">
+                        <div class="seating-chart">
+                            <div class="field-container">
+                                <div class="field">
+                                    <div class="pitch">Cricket Field</div>
+                                </div>
+                            </div>
+                            
+                            <div class="seating-sections">
+                                <div class="section north" data-section="north" data-price="3500">
+                                    <span class="section-label">North Stand</span>
+                                </div>
+                                <div class="section south" data-section="south" data-price="3500">
+                                    <span class="section-label">South Stand</span>
+                                </div>
+                                <div class="section east-upper" data-section="east-upper" data-price="4200">
+                                    <span class="section-label">East Upper</span>
+                                </div>
+                                <div class="section east-lower" data-section="east-lower" data-price="2800">
+                                    <span class="section-label">East Lower</span>
+                                </div>
+                                <div class="section west-upper" data-section="west-upper" data-price="4200">
+                                    <span class="section-label">West Upper</span>
+                                </div>
+                                <div class="section west-lower" data-section="west-lower" data-price="2800">
+                                    <span class="section-label">West Lower</span>
+                                </div>
+                                <div class="section vip" data-section="vip" data-price="8500">
+                                    <span class="section-label">VIP Box</span>
+                                </div>
+                                <div class="section general" data-section="general" data-price="1200">
+                                    <span class="section-label">General</span>
+                                </div>
+                            </div>
+                            
+                            <div class="seating-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color available"></div>
+                                    <span>Available</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color limited"></div>
+                                    <span>Few left</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color sold-out"></div>
+                                    <span>Sold out</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color selected"></div>
+                                    <span>Selected</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="event-sidebar">
+                    <!-- Cart Summary -->
+                    <div class="cart-summary" id="cartSummary">
+                        <h3>Your order</h3>
+                        <div class="cart-empty">
+                            <i class="fas fa-ticket-alt"></i>
+                            <p>No tickets selected</p>
+                            <span>Select tickets to continue</span>
+                        </div>
+                        <div class="cart-items" id="cartItems" style="display: none;">
+                            <!-- Cart items will be populated by JavaScript -->
+                        </div>
+                        <div class="cart-total" id="cartTotal" style="display: none;">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span id="subtotal">₹0</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Service fee</span>
+                                <span id="serviceFee">₹0</span>
+                            </div>
+                            <div class="total-row total">
+                                <span>Total</span>
+                                <span id="total">₹0</span>
+                            </div>
+                            <button class="checkout-btn" onclick="location.href='checkout.html'">
+                                Continue to checkout
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Info -->
+                    <div class="event-info-card">
+                        <h3>Event information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Duration</strong>
+                                <span>Approximately 7 hours</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Age limit</strong>
+                                <span>All ages welcome</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <strong>Entry</strong>
+                                <span>Mobile tickets accepted</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-ban"></i>
+                            <div>
+                                <strong>Restrictions</strong>
+                                <span>No outside food or drinks</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seller Info -->
+                    <div class="seller-info">
+                        <h3>Sold by verified sellers</h3>
+                        <div class="seller-badges">
+                            <div class="seller-badge">
+                                <i class="fas fa-shield-check"></i>
+                                <span>TicketAdda Guarantee</span>
+                            </div>
+                            <div class="seller-badge">
+                                <i class="fas fa-user-check"></i>
+                                <span>Verified sellers</span>
+                            </div>
+                            <div class="seller-badge">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Instant delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Similar Events -->
+    <section class="similar-events">
+        <div class="container">
+            <h2>More cricket events</h2>
+            <div class="events-grid">
+                <div class="event-card" onclick="location.href='event-detail.html?id=2'">
+                    <div class="event-image">
+                        <img src="https://images.indianexpress.com/2025/03/IPL-2025-RCB-vs-KKR-Live-Cricket-Streaming.jpg" alt="RCB vs KKR">
+                        <div class="event-price">From ₹900</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Cricket</div>
+                        <h3 class="event-title">RCB vs KKR</h3>
+                        <p class="event-venue">M. Chinnaswamy Stadium • Bangalore</p>
+                        <p class="event-date">Sat, Apr 22 • 7:30 PM</p>
+                    </div>
+                </div>
+                
+                <div class="event-card" onclick="location.href='event-detail.html?id=3'">
+                    <div class="event-image">
+                        <img src="https://cricxtasy.com/wp-content/uploads/2025/03/dc_vs_srh_dream11_prediction.png" alt="DC vs SRH">
+                        <div class="event-price">From ₹1,100</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Cricket</div>
+                        <h3 class="event-title">DC vs SRH</h3>
+                        <p class="event-venue">Arun Jaitley Stadium • Delhi</p>
+                        <p class="event-date">Sun, Apr 23 • 3:30 PM</p>
+                    </div>
+                </div>
+                
+                <div class="event-card" onclick="location.href='event-detail.html?id=4'">
+                    <div class="event-image">
+                        <img src="https://i.ytimg.com/vi/EzYY4FzsXBg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAVfGgCy0iDP6ivhPyu1BWcTHcnpw" alt="PBKS vs GT">
+                        <div class="event-price">From ₹800</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Cricket</div>
+                        <h3 class="event-title">PBKS vs GT</h3>
+                        <p class="event-venue">PCA Stadium • Mohali</p>
+                        <p class="event-date">Mon, Apr 24 • 7:30 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>TicketAdda</span>
+                    </div>
+                    <p>India's most trusted ticket marketplace for concerts, sports, theater, and more.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Buy tickets</h4>
+                    <ul>
+                        <li><a href="events.html?category=concerts">Concerts</a></li>
+                        <li><a href="events.html?category=sports">Sports</a></li>
+                        <li><a href="events.html?category=theater">Theater</a></li>
+                        <li><a href="events.html?category=comedy">Comedy</a></li>
+                        <li><a href="events.html">All events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Sell tickets</h4>
+                    <ul>
+                        <li><a href="sell.html">Sell tickets</a></li>
+                        <li><a href="help.html">How to sell</a></li>
+                        <li><a href="help.html">Pricing</a></li>
+                        <li><a href="help.html">Seller protection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help center</a></li>
+                        <li><a href="help.html">Contact us</a></li>
+                        <li><a href="help.html">TicketAdda Guarantee</a></li>
+                        <li><a href="terms.html">Terms of use</a></li>
+                        <li><a href="privacy.html">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="help.html">Help</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="event-detail.js"></script>
+</body>
+</html>

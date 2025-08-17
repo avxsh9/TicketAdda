@@ -3,204 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - TicketAdda</title>
-    <meta name="description" content="Sign in to TicketAdda - India's most trusted ticket marketplace. Access your account to buy and sell tickets safely.">
-    
+    <title>Sign in - TicketAdda</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login-styles.css">
-    
+    <link rel="stylesheet" href="style.cs">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="https://i.imgur.com/g8e1m5b.png">
+    <style>
+        /* Make the icon big and red so we can't miss it */
+        .fa-shield-check {
+            font-size: 100px;
+            color: red;
+        }
+    </style>
 </head>
-<body class="login-page">
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-brand">
-                <div class="brand-logo">
-                    <i class="fas fa-ticket-alt"></i>
-                </div>
-                <span class="brand-text">TicketAdda</span>
-            </a>
-            
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
-                    <li class="nav-item"><a href="index.html#categories" class="nav-link">Categories</a></li>
-                    <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
-                </ul>
-            </div>
-            
-            <div class="nav-actions">
-                <a href="login.html" class="btn-login active">Login</a>
-                <a href="signup.html" class="btn-cta">Sign Up</a>
-            </div>
-            
-            <div class="nav-toggle" id="hamburger">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <main class="login-main">
-        <div class="login-container">
-            <div class="login-left">
-                <div class="login-hero">
-                    <h1 class="login-title">
-                        Welcome Back to 
-                        <span class="gradient-text">TicketAdda</span>
-                    </h1>
-                    <p class="login-subtitle">
-                        Sign in to your account and continue your journey with India's most trusted ticket marketplace.
-                    </p>
-                    
-                    <div class="login-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Quick Access</h3>
-                                <p>Instant access to your saved events and tickets</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Saved Favorites</h3>
-                                <p>Your wishlist and favorite events waiting for you</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-history"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Order History</h3>
-                                <p>Track your past purchases and upcoming events</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="trust-indicators">
-                        <div class="trust-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Secure Login</span>
-                        </div>
-                        <div class="trust-item">
-                            <i class="fas fa-user-check"></i>
-                            <span>Verified Platform</span>
-                        </div>
-                        <div class="trust-item">
-                            <i class="fas fa-lock"></i>
-                            <span>Data Protected</span>
-                        </div>
+    <div class="auth-wrapper">
+        <div class="auth-container">
+            <div class="auth-form-section">
+                <div class="auth-header">
+                    <a href="index.html" class="nav-brand">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>TicketAdda</span>
+                    </a>
+                    <div class="header-nav">
+                        <span>Don't have an account?</span>
+                        <a href="signup.html" class="btn-secondary">Sign up</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="login-right">
-                <div class="login-form-container">
-                    <div class="form-header">
-                        <h2 class="form-title">Sign In</h2>
-                        <p class="form-subtitle">Enter your credentials to access your account</p>
-                    </div>
+
+                <div class="form-content">
+                    <h1>Welcome Back</h1>
+                    <p>Enter your credentials to access your account.</p>
                     
-                    <form class="login-form" id="loginForm">
+                    <form id="loginForm">
                         <div class="form-group">
-                            <label for="loginEmail" class="form-label">Email Address</label>
-                            <input type="email" id="loginEmail" name="email" class="form-input" placeholder="Enter your email address" required>
-                            <span class="form-error" id="emailError"></span>
+                            <label for="email">Email address</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="loginPassword" class="form-label">Password</label>
-                            <div class="password-input-container">
-                                <input type="password" id="loginPassword" name="password" class="form-input" placeholder="Enter your password" required>
-                                <button type="button" class="password-toggle" id="passwordToggle">
+                            <label for="password">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                                <button type="button" class="toggle-password" id="togglePassword">
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
-                            <span class="form-error" id="passwordError"></span>
                         </div>
                         
                         <div class="form-options">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="rememberMe" name="rememberMe">
-                                <span class="checkbox-custom"></span>
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
                                 <span class="checkbox-text">Remember me</span>
                             </label>
-                            <a href="#" class="forgot-password">Forgot password?</a>
+                            <a href="#" class="forgot-link">Forgot password?</a>
                         </div>
                         
-                        <button type="submit" class="login-submit-btn">
-                            <span class="btn-text">Sign In</span>
-                            <i class="fas fa-arrow-right btn-icon"></i>
+                        <button type="submit" class="btn-primary btn-full">
+                            Sign In
                         </button>
+                        
+                        <div class="divider">
+                            <span>OR</span>
+                        </div>
+                        
+                        <div class="social-buttons">
+                            <button type="button" class="btn-social">
+                                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
+                                Sign in with Google
+                            </button>
+                            <button type="button" class="btn-social">
+                                 <i class="fab fa-facebook-f"></i>
+                                Sign in with Facebook
+                            </button>
+                        </div>
                     </form>
+                </div>
+            </div>
+            
+            <div class="auth-visual-section">
+                <div class="visual-content">
+                    <h2>Turn your tickets into cash.</h2>
+                    <p>India's most trusted ticket marketplace. List your spare tickets in minutes.</p>
                     
-                    <div class="form-divider">
-                        <span class="divider-text">or continue with</span>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-shield-check"></i>
+                            <h3>100% Secure</h3>
+                            <p>Your transactions and data are protected with bank-level security.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Get Paid Fast</h3>
+                            <p>Receive your payment within 24 hours after your tickets sell.</p>
+                        </div>
                     </div>
-                    
-                    <div class="social-login">
-                        <button class="social-btn google-btn">
-                            <i class="fab fa-google"></i>
-                            <span>Continue with Google</span>
-                        </button>
-                        <button class="social-btn facebook-btn">
-                            <i class="fab fa-facebook-f"></i>
-                            <span>Continue with Facebook</span>
-                        </button>
-                    </div>
-                    
-                    <div class="form-footer">
-                        <p class="signup-link">
-                            Don't have an account? 
-                            <a href="signup.html" class="signup-link-text">Create one here</a>
-                        </p>
+
+                    <div class="testimonial">
+                        <p>"TicketAdda made buying IPL tickets so easy and secure. The best platform in India!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFU4z1T1EzG0Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718772627030?e=1758153600&v=beta&t=ATaw6BbzHoGBanf3AE63GW_cPkRNWmsrfgSAu6MJIJE" alt="User">
+                            <div>
+                                <strong>Avinash Prasad</strong>
+                                <span>from Delhi NCR</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
-
-    <footer class="footer-minimal">
-        <div class="container">
-            <div class="footer-content-minimal">
-                <div class="footer-left">
-                    <div class="footer-brand">
-                        <div class="brand-logo"><i class="fas fa-ticket-alt"></i></div>
-                        <span class="brand-text">TicketAdda</span>
-                    </div>
-                </div>
-                <div class="footer-right">
-                    <div class="footer-links-minimal">
-                        <a href="index.html#about">About</a>
-                        <a href="index.html#contact">Contact</a>
-                        <a href="#">Privacy</a>
-                        <a href="#">Terms</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom-minimal">
-                <p>&copy; 2025 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
+    
     <script src="login-script.js"></script>
 </body>
 </html>

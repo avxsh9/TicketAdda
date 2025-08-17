@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - TicketAdda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/g8e1m5b.png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="fas fa-ticket-alt"></i>
+                <span>TicketAdda</span>
+            </a>
+            <div class="header-nav">
+                <a href="#" class="nav-link"><i class="fas fa-headset"></i> Help Center</a>
+                <div class="secure-checkout">
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Checkout</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="checkout-header">
+                <h1>Complete Your Booking</h1>
+                <div class="countdown-timer">
+                    <p>Time left to complete your order:</p>
+                    <div id="timer">
+                        <span id="minutes">10</span>:<span id="seconds">00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-container">
+                <div class="checkout-details">
+                    <section class="checkout-section">
+                        <h2><i class="fas fa-ticket-alt"></i> Your Tickets</h2>
+                        <div class="ticket-card">
+                            <h3>IPL 2025 Final: Mumbai Indians vs Chennai Super Kings</h3>
+                            <div class="ticket-info">
+                                <span><i class="fas fa-calendar-day"></i> Sun, 25 May 2025, 7:30 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Wankhede Stadium, Mumbai</span>
+                            </div>
+                            <div class="ticket-seat-info">
+                                <p><strong>2 Tickets</strong></p>
+                                <p>Section: East Stand, Row: K, Seats: 14, 15</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="checkout-section">
+                        <h2><i class="fas fa-user-circle"></i> Contact Information</h2>
+                        <form id="checkoutForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" placeholder="you@example.com" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" placeholder="+91 XXXX XXXX XX" required>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="checkout-section">
+                        <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                        <div class="payment-tabs">
+                            <button class="tab-button active" data-tab="card"><i class="fas fa-credit-card"></i> Credit/Debit Card</button>
+                            <button class="tab-button" data-tab="upi"><i class="fab fa-google-pay"></i> UPI</button>
+                        </div>
+
+                        <div class="payment-content">
+                            <div class="tab-panel active" id="card">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <div class="input-with-icon">
+                                        <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000">
+                                        <i class="fab fa-cc-visa"></i>
+                                    </div>
+                                </div>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="expiryDate">Expiry Date</label>
+                                        <input type="text" id="expiryDate" placeholder="MM / YY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" placeholder="123">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card</label>
+                                    <input type="text" id="cardName" placeholder="Enter name as on card">
+                                </div>
+                            </div>
+
+                            <div class="tab-panel" id="upi">
+                                <p>Enter your UPI ID to receive a payment request.</p>
+                                <div class="form-group">
+                                    <label for="upiId">UPI ID</label>
+                                    <input type="text" id="upiId" placeholder="yourname@bank">
+                                </div>
+                                <div class="upi-apps">
+                                    <img src="https://i.imgur.com/dK3HwI6.png" alt="Paytm">
+                                    <img src="https://i.imgur.com/kiM8z2L.png" alt="Google Pay">
+                                    <img src="https://i.imgur.com/G35Zg32.png" alt="PhonePe">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="price-details">
+                        <div class="price-row">
+                            <span>Tickets (2 x ₹2,500.00)</span>
+                            <span>₹5,000.00</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Booking Fee</span>
+                            <span>₹250.00</span>
+                        </div>
+                         <div class="price-row">
+                            <span>GST (18%)</span>
+                            <span>₹45.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-code">
+                        <label for="promo">Have a promo code?</label>
+                        <div class="promo-input">
+                            <input type="text" id="promo" placeholder="Enter code">
+                            <button>Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="total-price">
+                        <div class="price-row">
+                            <strong>Total Amount</strong>
+                            <strong>₹5,295.00</strong>
+                        </div>
+                        <p>Prices are in INR</p>
+                    </div>
+
+                    <button type="submit" form="checkoutForm" class="btn-primary">
+                        Pay ₹5,295.00
+                    </button>
+
+                    <div class="trust-badges">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% Secure Payments</span>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

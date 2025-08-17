@@ -1,0 +1,58 @@
+/* Add this CSS to your existing sell.css file for the new elements */
+
+/* For the search widget in hero section */
+.help-search-widget p {
+    font-size: 16px;
+    color: #495057;
+    margin-bottom: 24px;
+    text-align: left;
+}
+.search-bar-widget {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+}
+.search-bar-widget i {
+    position: absolute;
+    left: 16px;
+    color: #6c757d;
+}
+.search-bar-widget input {
+    flex: 1;
+    border: none;
+    background: none;
+    padding: 14px 16px 14px 48px;
+    font-size: 16px;
+}
+.search-bar-widget input:focus {
+    outline: none;
+}
+.search-bar-widget .search-btn {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 4px;
+}
+
+/* For the textarea in contact form */
+.input-wrapper textarea {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    resize: vertical; /* Allows vertical resize */
+}
+.input-wrapper textarea:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
