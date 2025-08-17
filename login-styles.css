@@ -43,8 +43,9 @@
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.2;
-    color: white;
+    color: #1a1a1a;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .login-subtitle {
