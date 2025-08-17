@@ -201,7 +201,7 @@
     border: 2px solid #e1e5e9;
     border-radius: 10px;
     transition: all 0.3s ease;
-    background: rgba(72, 71, 199, 0.73);
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.7) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(19, 136, 8, 0.7) 100%);
     overflow: hidden;
 }
 
