@@ -368,8 +368,29 @@ h1, h2, h3, h4 {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    color: white;
-    z-index: 1;
+    color: #1a1a1a;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-content::before {
+    content: '🕉️';
+    position: absolute;
+    top: -30px;
+    left: -50px;
+    font-size: 2rem;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-content::after {
+    content: '🪔';
+    position: absolute;
+    bottom: -30px;
+    right: -50px;
+    font-size: 2rem;
+    opacity: 0.1;
+    animation: float 8s ease-in-out infinite reverse;
 }
 .hero-badge {
     display: inline-flex;
