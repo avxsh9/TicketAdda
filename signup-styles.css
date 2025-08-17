@@ -375,7 +375,7 @@
 
 .signup-submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(255, 153, 51, 0.4);
 }
 
 .signup-submit-btn:disabled {
