@@ -122,10 +122,10 @@
 .signup-form-container {
     background: white;
     border-radius: 20px;
-    padding: 40px;
+    padding: 30px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
 }
 
 .form-header {
