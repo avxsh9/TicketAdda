@@ -409,7 +409,7 @@ h1, h2, h3, h4 {
     font-weight: var(--font-medium);
     color: #1a1a1a;
 }
-.hero-badge i { color: var(--primary-400); }
+.hero-badge i { color: #FF9933; }
 
 .hero-title {
     font-size: var(--text-6xl);
