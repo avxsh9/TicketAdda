@@ -535,8 +535,12 @@ h1, h2, h3, h4 {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     transition: var(--transition-all);
-    border: 1px solid var(--gray-200);
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #FF9933, #FFFFFF, #138808);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
     cursor: pointer;
+    position: relative;
 }
 .category-card:hover {
     transform: translateY(-8px);
