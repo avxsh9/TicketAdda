@@ -460,17 +460,18 @@ h1, h2, h3, h4 {
     gap: var(--space-3);
     backdrop-filter: blur(10px);
 }
-.search-icon { color: var(--gray-400); margin-left: var(--space-4); font-size: var(--text-lg); }
+.search-icon { color: #FF9933; margin-left: var(--space-4); font-size: var(--text-lg); }
 .search-input {
     flex: 1;
     border: none;
     outline: none;
     font-size: var(--text-base);
     padding: var(--space-3) 0;
-    color: white;
+    color: #1a1a1a;
     background: transparent;
+    font-weight: 500;
 }
-.search-input::placeholder { color: var(--gray-400); }
+.search-input::placeholder { color: rgba(26, 26, 26, 0.6); }
 .search-btn {
     background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-500) 100%);
     color: white;
