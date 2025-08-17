@@ -318,11 +318,12 @@ h1, h2, h3, h4 {
 }
 .particle {
     position: absolute;
-    width: 4px; height: 4px;
-    background: var(--primary-400);
+    width: 6px; height: 6px;
+    background: var(--primary-500);
     border-radius: 50%;
     animation: float 8s ease-in-out infinite;
-    opacity: 0.6;
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(255, 153, 51, 0.5);
 }
 .particle:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; animation-duration: 8s; }
 .particle:nth-child(3) { top: 80%; left: 40%; animation-delay: 4s; animation-duration: 7s; }
