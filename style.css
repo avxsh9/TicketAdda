@@ -29,17 +29,17 @@
     --primary-800: #B23D00;
     --primary-900: #992900;
     
-    /* Secondary Colors (Blue) */
-    --secondary-50: #F0F9FF;
-    --secondary-100: #E0F2FE;
-    --secondary-200: #BAE6FD;
-    --secondary-300: #7DD3FC;
-    --secondary-400: #38BDF8;
-    --secondary-500: #0EA5E9;
-    --secondary-600: #0284C7;
-    --secondary-700: #0369A1;
-    --secondary-800: #075985;
-    --secondary-900: #0C4A6E;
+    /* Secondary Colors (Indian Green) */
+    --secondary-50: #F0FDF4;
+    --secondary-100: #DCFCE7;
+    --secondary-200: #BBF7D0;
+    --secondary-300: #86EFAC;
+    --secondary-400: #4ADE80;
+    --secondary-500: #138808;
+    --secondary-600: #0F7A06;
+    --secondary-700: #0C6B04;
+    --secondary-800: #0A5D03;
+    --secondary-900: #084E02;
     
     /* Neutral Colors */
     --gray-50: #F9FAFB;
