@@ -203,6 +203,7 @@
     border: none !important;
     border-radius: 0 10px 10px 0;
     box-shadow: none !important;
+    background: rgba(72, 71, 199, 0.73) !important;
 }
 
 .password-input-container {
