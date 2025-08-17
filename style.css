@@ -195,7 +195,7 @@ h1, h2, h3, h4 {
 .brand-text {
     font-size: var(--text-xl);
     font-weight: var(--font-extrabold);
-    color: white;
+    color: var(--gray-800);
 }
 .nav-menu {
     display: flex;
