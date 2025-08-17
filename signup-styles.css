@@ -185,14 +185,13 @@
 .form-input {
     width: 100%;
     padding: 14px 16px;
-    border: 2px solid #e1e5e9;
+    border: 2px solid rgba(255, 153, 51, 0.3);
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.95);
-    color: #1a1a1a;
+    background: #ffffff !important;
+    color: #1a1a1a !important;
     font-weight: 500;
-    border: 2px solid rgba(255, 153, 51, 0.3);
 }
 
 .form-input::placeholder {
