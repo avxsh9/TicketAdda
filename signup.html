@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - TicketAdda</title>
+    <meta name="description" content="Join TicketAdda - India's most trusted ticket marketplace. Create your account to buy and sell tickets safely.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup-styles.css">
+    
+    <link rel="icon" type="image/png" href="https://i.imgur.com/g8e1m5b.png">
+</head>
+<body class="signup-page">
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-logo">
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+                <span class="brand-text">TicketAdda</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+                    <li class="nav-item"><a href="index.html#categories" class="nav-link">Categories</a></li>
+                    <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="signup.html" class="btn-cta active">Sign Up</a>
+            </div>
+            
+            <div class="nav-toggle" id="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="signup-main">
+        <div class="signup-container">
+            <div class="signup-left">
+                <div class="signup-hero">
+                    <h1 class="signup-title">
+                        Join India's Most 
+                        <span class="gradient-text">Trusted</span> 
+                        Ticket Marketplace
+                    </h1>
+                    <p class="signup-subtitle">
+                        Get access to thousands of events, secure transactions, and the best prices on tickets across India.
+                    </p>
+                    
+                    <div class="signup-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>100% Secure</h3>
+                                <p>Bank-level security for all transactions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Instant Access</h3>
+                                <p>Get tickets immediately after purchase</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Verified Community</h3>
+                                <p>All sellers are ID verified for your safety</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-proof">
+                        <div class="proof-stats">
+                            <div class="stat">
+                                <span class="stat-number">250K+</span>
+                                <span class="stat-label">Users</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">15K+</span>
+                                <span class="stat-label">Events</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">99.8%</span>
+                                <span class="stat-label">Success Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="signup-right">
+                <div class="signup-form-container">
+                    <div class="form-header">
+                        <h2 class="form-title">Create Your Account</h2>
+                        <p class="form-subtitle">Join thousands of happy customers</p>
+                    </div>
+                    
+                    <form class="signup-form" id="signupForm">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Enter your first name" required>
+                            <span class="form-error" id="firstNameError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Enter your last name" required>
+                            <span class="form-error" id="lastNameError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <div class="phone-input-container">
+                                <span class="phone-prefix">+91</span>
+                                <input type="tel" id="phone" name="phone" class="form-input phone-input" placeholder="Enter your phone number" required>
+                            </div>
+                            <span class="form-error" id="phoneError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password" class="form-label">Create Password</label>
+                            <div class="password-input-container">
+                                <input type="password" id="password" name="password" class="form-input" placeholder="Create a strong password" required>
+                                <button type="button" class="password-toggle" id="passwordToggle">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Password strength</span>
+                            </div>
+                            <span class="form-error" id="passwordError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Confirm your password" required>
+                            <span class="form-error" id="confirmPasswordError"></span>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="termsAccept" name="termsAccept" required>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">
+                                    I agree to the <a href="#" class="terms-link">Terms of Service</a> and 
+                                    <a href="#" class="terms-link">Privacy Policy</a>
+                                </span>
+                            </label>
+                            <span class="form-error" id="termsError"></span>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">
+                                    Subscribe to our newsletter for event updates and exclusive offers
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="signup-submit-btn">
+                            <span class="btn-text">Create Account</span>
+                            <i class="fas fa-arrow-right btn-icon"></i>
+                        </button>
+                    </form>
+                    
+                    <div class="form-divider">
+                        <span class="divider-text">or continue with</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button class="social-btn google-btn">
+                            <i class="fab fa-google"></i>
+                            <span>Continue with Google</span>
+                        </button>
+                        <button class="social-btn facebook-btn">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Continue with Facebook</span>
+                        </button>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <p class="login-link">
+                            Already have an account? 
+                            <a href="login.html" class="login-link-text">Sign in here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-minimal">
+        <div class="container">
+            <div class="footer-content-minimal">
+                <div class="footer-left">
+                    <div class="footer-brand">
+                        <div class="brand-logo"><i class="fas fa-ticket-alt"></i></div>
+                        <span class="brand-text">TicketAdda</span>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links-minimal">
+                        <a href="index.html#about">About</a>
+                        <a href="index.html#contact">Contact</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-minimal">
+                <p>&copy; 2025 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="signup-script.js"></script>
+</body>
+</html>
