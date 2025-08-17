@@ -206,7 +206,7 @@ h1, h2, h3, h4 {
     gap: var(--space-8);
 }
 .nav-link {
-    color: var(--gray-300);
+    color: var(--gray-600);
     text-decoration: none;
     font-weight: var(--font-medium);
     font-size: var(--text-sm);
@@ -215,7 +215,7 @@ h1, h2, h3, h4 {
     position: relative;
 }
 .nav-link:hover {
-    color: white;
+    color: var(--primary-600);
 }
 .nav-link::after {
     content: '';
