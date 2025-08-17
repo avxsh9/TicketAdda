@@ -168,7 +168,8 @@
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: white;
+    background: rgba(72, 71, 199, 0.73);
+    color: white;
 }
 
 .form-input:focus {
