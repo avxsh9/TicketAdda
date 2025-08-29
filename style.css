@@ -50,6 +50,10 @@ body {
     gap: 8px;
 }
 
+.avinashlogo{
+    height: 50px;
+}
+
 .nav-brand i {
     font-size: 28px;
 }

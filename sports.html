@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Events - TicketAdda (Sports)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="sports.css" />
+<style>
+  /* quick page header/footer adjustments for demo */
+  .header { background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+  .navbar .nav-container { max-width:1180px; margin:0 auto; padding:12px 18px; display:flex; align-items:center; gap:16px; justify-content:space-between; }
+  .nav-brand { display:flex; gap:8px; align-items:center; font-weight:700; color:#1a1a1a; text-decoration:none; }
+  .nav-brand i { color:#ff6b35; font-size:20px; }
+  .nav-menu { display:flex; gap:12px; align-items:center; }
+  .nav-link { text-decoration:none; color:#495057; padding:6px 8px; }
+  .nav-link.sell-link { background:#ff6b35; color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; display:flex; align-items:center; gap:8px; }
+  .btn-login { background:none; border:1px solid #ff6b35; padding:8px 12px; border-radius:8px; color:#ff6b35; text-decoration:none; }
+  .footer { background:#fff; border-top:1px solid #eee; padding:32px 0; margin-top:40px; }
+  .footer .container { max-width:1180px; margin:0 auto; padding:0 18px; }
+  .footer-content { display:flex; gap:32px; flex-wrap:wrap; justify-content:space-between; }
+  .footer-section ul { list-style:none; padding:0; margin:0; }
+  .footer-section ul li a { text-decoration:none; color:#495057; font-size:14px; }
+  footer .footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:18px; border-top:1px solid #eee; margin-top:18px; font-size:13px; color:#6c757d; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <i class="fas fa-ticket-alt"></i>
+        <span>TicketAdda</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="#" class="nav-link active">Sports</a>
+        <a href="#" class="nav-link">Concerts</a>
+        <a href="#" class="nav-link">Theater</a>
+        <a href="sell.html" class="nav-link sell-link"><i class="fas fa-plus-circle"></i> Sell</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#" class="nav-link">Help</a>
+        <a href="#" class="btn-login">Sign in</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Search Header -->
+<section class="search-header">
+  <div class="container">
+    <div class="search-results-info">
+      <h1>Events in India</h1>
+      <p class="results-count">Showing <span id="resultsCount">0</span> events</p>
+    </div>
+
+    <div class="search-controls">
+      <div class="search-input-container">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search events, artists, venues..." id="eventsSearch" />
+      </div>
+
+      <div class="filter-controls">
+        <button class="filter-btn" id="filterBtn"><i class="fas fa-filter"></i> Filters</button>
+        <div class="sort-dropdown">
+          <select id="sortSelect">
+            <option value="date">Sort by Date</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="popularity">Popularity</option>
+            <option value="distance">Distance</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="container">
+    <div class="content-wrapper">
+
+      <!-- Sidebar Filters -->
+      <aside class="filters-sidebar" id="filtersSidebar">
+        <div class="filters-header">
+          <h3>Filters</h3>
+          <button class="clear-filters" id="clearFilters">Clear all</button>
+        </div>
+
+        <div class="filter-section">
+          <h4>Category</h4>
+          <div class="filter-options">
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="category" value="sports" checked><span class="checkmark"></span> Sports <span class="count">(456)</span></label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="category" value="concerts"><span class="checkmark"></span> Concerts <span class="count">(234)</span></label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="category" value="theater"><span class="checkmark"></span> Theater <span class="count">(123)</span></label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="category" value="comedy"><span class="checkmark"></span> Comedy <span class="count">(89)</span></label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="category" value="festivals"><span class="checkmark"></span> Festivals <span class="count">(67)</span></label>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h4>Location</h4>
+          <div class="filter-options">
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="location" value="mumbai" checked><span class="checkmark"></span> Mumbai <span class="count">(345)</span></label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="location" value="delhi"><span class="checkmark"></span> Delhi <span class="count">(298)</span></label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="location" value="bangalore"><span class="checkmark"></span> Bangalore <span class="count">(234)</span></label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="location" value="pune"><span class="checkmark"></span> Pune <span class="count">(187)</span></label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="location" value="hyderabad"><span class="checkmark"></span> Hyderabad <span class="count">(156)</span></label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="location" value="chennai"><span class="checkmark"></span> Chennai <span class="count">(134)</span></label>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h4>Date</h4>
+          <div class="filter-options">
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="date" value="today"><span class="checkmark"></span> Today</label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="date" value="tomorrow"><span class="checkmark"></span> Tomorrow</label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="date" value="this-week"><span class="checkmark"></span> This week</label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="date" value="this-month"><span class="checkmark"></span> This month</label>
+            <label class="filter-checkbox"><input type="checkbox" data-filter-type="date" value="next-month"><span class="checkmark"></span> Next month</label>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h4>Price Range</h4>
+          <div class="price-range">
+            <div class="price-inputs">
+              <input type="number" placeholder="Min ₹" id="minPrice">
+              <span>to</span>
+              <input type="number" placeholder="Max ₹" id="maxPrice">
+            </div>
+            <div class="price-slider">
+              <input type="range" min="0" max="10000" value="0" id="priceSliderMin">
+              <input type="range" min="0" max="10000" value="10000" id="priceSliderMax">
+            </div>
+            <div class="price-labels">
+              <span>₹0</span><span>₹10,000+</span>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- Events Grid -->
+      <div class="events-content">
+        <div class="active-filters" id="activeFilters">
+          <!-- dynamic -->
+        </div>
+
+        <div class="events-grid" id="eventsGrid">
+          <!-- Sample Event Cards - you can add more or generate dynamically -->
+          <div class="event-card" data-category="sports" data-location="mumbai" data-price="1200">
+            <div class="event-image">
+              <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=900&h=600&fit=crop" alt="IPL Match">
+              <div class="event-badge trending">Trending</div>
+              <div class="event-price">From ₹1,200</div>
+            </div>
+            <div class="event-details">
+              <div class="event-category">Cricket</div>
+              <h3 class="event-title">Mumbai Indians vs Chennai Super Kings</h3>
+              <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Wankhede Stadium, Mumbai</p>
+              <p class="event-date"><i class="fas fa-calendar"></i> Sunday, April 20 • 3:30 PM</p>
+              <div class="event-stats">
+                <span class="tickets-available"><i class="fas fa-ticket-alt"></i> 89 tickets available</span>
+                <span class="price-range">₹1,200 - ₹8,500</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card" data-category="concerts" data-location="mumbai" data-price="2500">
+            <div class="event-image">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&h=600&fit=crop" alt="Arijit Singh Concert">
+              <div class="event-badge hot">Hot</div>
+              <div class="event-price">From ₹2,500</div>
+            </div>
+            <div class="event-details">
+              <div class="event-category">Concert</div>
+              <h3 class="event-title">Arijit Singh Live in Concert</h3>
+              <p class="event-venue"><i class="fas fa-map-marker-alt"></i> NSCI Dome, Mumbai</p>
+              <p class="event-date"><i class="fas fa-calendar"></i> Saturday, November 15 • 7:00 PM</p>
+              <div class="event-stats">
+                <span class="tickets-available"><i class="fas fa-ticket-alt"></i> 234 tickets available</span>
+                <span class="price-range">₹2,500 - ₹12,000</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card" data-category="sports" data-location="mumbai" data-price="800">
+            <div class="event-image">
+              <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=900&h=600&fit=crop" alt="ISL Football">
+              <div class="event-price">From ₹800</div>
+            </div>
+            <div class="event-details">
+              <div class="event-category">Football</div>
+              <h3 class="event-title">Mumbai City FC vs Bengaluru FC</h3>
+              <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Mumbai Football Arena, Mumbai</p>
+              <p class="event-date"><i class="fas fa-calendar"></i> Friday, December 8 • 7:30 PM</p>
+              <div class="event-stats">
+                <span class="tickets-available"><i class="fas fa-ticket-alt"></i> 156 tickets available</span>
+                <span class="price-range">₹800 - ₹3,500</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- add more sample cards below as needed (I included 6 in original) -->
+          <div class="event-card" data-category="theater" data-location="mumbai" data-price="1500">
+            <div class="event-image">
+              <img src="https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=900&h=600&fit=crop" alt="Theater Show">
+              <div class="event-price">From ₹1,500</div>
+            </div>
+            <div class="event-details">
+              <div class="event-category">Theater</div>
+              <h3 class="event-title">Mughal-E-Azam - The Musical</h3>
+              <p class="event-venue"><i class="fas fa-map-marker-alt"></i> NCPA, Mumbai</p>
+              <p class="event-date"><i class="fas fa-calendar"></i> Saturday, November 30 • 7:30 PM</p>
+              <div class="event-stats">
+                <span class="tickets-available"><i class="fas fa-ticket-alt"></i> 67 tickets available</span>
+                <span class="price-range">₹1,500 - ₹6,000</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card" data-category="sports" data-location="mumbai" data-price="500">
+            <div class="event-image">
+              <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=900&h=600&fit=crop" alt="Pro Kabaddi">
+              <div class="event-price">From ₹500</div>
+            </div>
+            <div class="event-details">
+              <div class="event-category">Kabaddi</div>
+              <h3 class="event-title">U Mumba vs Puneri Paltan</h3>
+              <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Sardar Vallabhbhai Patel Stadium, Mumbai</p>
+              <p class="event-date"><i class="fas fa-calendar"></i> Thursday, January 18 • 8:00 PM</p>
+              <div class="event-stats">
+                <span class="tickets-available"><i class="fas fa-ticket-alt"></i> 298 tickets available</span>
+                <span class="price-range">₹500 - ₹2,000</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Load More -->
+        <div class="load-more-container">
+          <button class="load-more-btn" id="loadMoreBtn">Load more events <i class="fas fa-chevron-down"></i></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand"><i class="fas fa-ticket-alt"></i> <span>TicketAdda</span></div>
+        <p>India's most trusted ticket marketplace for concerts, sports, theater, and more.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Buy tickets</h4>
+        <ul>
+          <li><a href="#">Concerts</a></li>
+          <li><a href="#">Sports</a></li>
+          <li><a href="#">Theater</a></li>
+          <li><a href="#">Comedy</a></li>
+          <li><a href="#">All events</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Sell tickets</h4>
+        <ul>
+          <li><a href="#">Sell tickets</a></li>
+          <li><a href="#">How to sell</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Seller protection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help center</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">TicketAdda Guarantee</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Help</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="sports.js"></script>
+</body>
+</html>
