@@ -3,53 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events in India - TicketAdda</title>
+    <title>Discover Events - TicketAdda</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="events.css">
+    <link rel="icon" type="image/png" href="logo.png.png">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="nav-brand">
-                    <i class="fas fa-ticket-alt"></i>
-                    <span>TicketAdda</span>
+                <a href="/" class="nav-brand">
+                    <img src="logo png.png" alt="TicketAdda" class="nav-logo">
                 </a>
                 
                 <div class="nav-search">
                     <div class="search-bar">
                         <i class="fas fa-search"></i>
                         <input type="text" placeholder="Search events, artists, teams, or venues" id="mainSearch">
-                        <button class="search-btn" onclick="performMainSearch()">Search</button>
+                        <button class="search-btn" onclick="performMainSearch()">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
                 </div>
                 
                 <div class="nav-menu">
-                    <a href="#" class="nav-link active" data-category="sports">Sports</a>
-                    <a href="#" class="nav-link" data-category="concerts">Concerts</a>
-                    <a href="#" class="nav-link" data-category="theater">Theater</a>
-                    <a href="sell.html" class="nav-link sell-link">
+                    <a href="#" class="nav-link" data-category="sports">
+                        <i class="fas fa-futbol"></i>
+                        Sports
+                    </a>
+                    <a href="#" class="nav-link" data-category="concerts">
+                        <i class="fas fa-music"></i>
+                        Concerts
+                    </a>
+                    <a href="#" class="nav-link" data-category="theater">
+                        <i class="fas fa-theater-masks"></i>
+                        Theater
+                    </a>
+                    <a href="#" class="nav-link sell-link">
                         <i class="fas fa-plus-circle"></i>
                         Sell
                     </a>
                 </div>
                 
                 <div class="nav-actions">
-                    <a href="help.html" class="nav-link">Help</a>
                     <button class="cart-btn" onclick="toggleCart()">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count" id="cartCount">0</span>
                     </button>
-                    <a href="login.html" class="btn-login">Sign in</a>
+                    <a href="#" class="btn-login">Sign in</a>
                 </div>
                 
-                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
@@ -64,12 +74,30 @@
                 </button>
             </div>
             <div class="mobile-nav-links">
-                <a href="#" data-category="sports">Sports</a>
-                <a href="#" data-category="concerts">Concerts</a>
-                <a href="#" data-category="theater">Theater</a>
-                <a href="sell.html">Sell Tickets</a>
-                <a href="help.html">Help</a>
-                <a href="login.html">Sign in</a>
+                <a href="#" data-category="sports">
+                    <i class="fas fa-futbol"></i>
+                    Sports
+                </a>
+                <a href="#" data-category="concerts">
+                    <i class="fas fa-music"></i>
+                    Concerts
+                </a>
+                <a href="#" data-category="theater">
+                    <i class="fas fa-theater-masks"></i>
+                    Theater
+                </a>
+                <a href="#" class="sell-link">
+                    <i class="fas fa-plus-circle"></i>
+                    Sell Tickets
+                </a>
+                <a href="#">
+                    <i class="fas fa-question-circle"></i>
+                    Help
+                </a>
+                <a href="#" class="mobile-login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign in
+                </a>
             </div>
         </div>
     </div>
@@ -77,30 +105,43 @@
     <!-- Search Header -->
     <section class="search-header">
         <div class="container">
-            <div class="search-results-info">
-                <h1>Events in India</h1>
-                <p class="results-count">Showing <span id="resultsCount">1,247</span> events</p>
-            </div>
-            
-            <div class="search-controls">
-                <div class="search-input-container">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search events, artists, venues..." id="eventsSearch">
+            <div class="search-hero">
+                <div class="search-results-info">
+                    <h1>Discover Amazing Events</h1>
+                    <p class="results-count">
+                        <span id="resultsCount">1,247</span> events found
+                        <span class="location-indicator">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Across India
+                        </span>
+                    </p>
                 </div>
                 
-                <div class="filter-controls">
-                    <button class="filter-btn" id="filterBtn" onclick="toggleFilters()">
-                        <i class="fas fa-filter"></i>
-                        Filters
-                    </button>
-                    <div class="sort-dropdown">
-                        <select id="sortSelect">
-                            <option value="date">Sort by Date</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="popularity">Popularity</option>
-                            <option value="distance">Distance</option>
-                        </select>
+                <div class="search-controls">
+                    <div class="search-input-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search events, artists, venues..." id="eventsSearch">
+                        <button class="search-clear" id="searchClear" onclick="clearSearch()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <button class="filter-btn" id="filterBtn" onclick="toggleFilters()">
+                            <i class="fas fa-sliders-h"></i>
+                            Filters
+                            <span class="filter-count" id="filterCount"></span>
+                        </button>
+                        <div class="sort-dropdown">
+                            <i class="fas fa-sort"></i>
+                            <select id="sortSelect">
+                                <option value="date">Upcoming First</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="popularity">Most Popular</option>
+                                <option value="distance">Nearest First</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -114,140 +155,179 @@
                 <!-- Sidebar Filters -->
                 <aside class="filters-sidebar" id="filtersSidebar">
                     <div class="filters-header">
-                        <h3>Filters</h3>
-                        <button class="clear-filters" id="clearFilters" onclick="clearAllFilters()">Clear all</button>
+                        <h3>
+                            <i class="fas fa-filter"></i>
+                            Filters
+                        </h3>
+                        <button class="clear-filters" id="clearFilters" onclick="clearAllFilters()">
+                            <i class="fas fa-eraser"></i>
+                            Clear all
+                        </button>
                     </div>
                     
                     <div class="filter-section">
-                        <h4>Category</h4>
+                        <h4>
+                            <i class="fas fa-layer-group"></i>
+                            Category
+                        </h4>
                         <div class="filter-options">
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="sports" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Sports
+                                <span class="filter-label">
+                                    <i class="fas fa-futbol"></i>
+                                    Sports
+                                </span>
                                 <span class="count">(456)</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="concerts" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Concerts
+                                <span class="filter-label">
+                                    <i class="fas fa-music"></i>
+                                    Concerts
+                                </span>
                                 <span class="count">(234)</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="theater" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Theater
+                                <span class="filter-label">
+                                    <i class="fas fa-theater-masks"></i>
+                                    Theater
+                                </span>
                                 <span class="count">(123)</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="comedy" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Comedy
+                                <span class="filter-label">
+                                    <i class="fas fa-laugh"></i>
+                                    Comedy
+                                </span>
                                 <span class="count">(89)</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="festivals" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Festivals
+                                <span class="filter-label">
+                                    <i class="fas fa-star"></i>
+                                    Festivals
+                                </span>
                                 <span class="count">(67)</span>
                             </label>
                         </div>
                     </div>
                     
                     <div class="filter-section">
-                        <h4>Location</h4>
+                        <h4>
+                            <i class="fas fa-map-marked-alt"></i>
+                            Location
+                        </h4>
                         <div class="filter-options">
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="mumbai" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Mumbai
+                                <span class="filter-label">Mumbai</span>
                                 <span class="count">(345)</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="delhi" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Delhi
+                                <span class="filter-label">Delhi</span>
                                 <span class="count">(298)</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="bangalore" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Bangalore
+                                <span class="filter-label">Bangalore</span>
                                 <span class="count">(234)</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="pune" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Pune
+                                <span class="filter-label">Pune</span>
                                 <span class="count">(187)</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="hyderabad" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Hyderabad
+                                <span class="filter-label">Hyderabad</span>
                                 <span class="count">(156)</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="chennai" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Chennai
+                                <span class="filter-label">Chennai</span>
                                 <span class="count">(134)</span>
                             </label>
                         </div>
                     </div>
                     
                     <div class="filter-section">
-                        <h4>Date</h4>
+                        <h4>
+                            <i class="fas fa-calendar-check"></i>
+                            When
+                        </h4>
                         <div class="filter-options">
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="today" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Today
+                                <span class="filter-label">Today</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="tomorrow" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Tomorrow
+                                <span class="filter-label">Tomorrow</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="this-week" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                This week
+                                <span class="filter-label">This week</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="this-month" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                This month
+                                <span class="filter-label">This month</span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" value="next-month" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
-                                Next month
+                                <span class="filter-label">Next month</span>
                             </label>
                         </div>
                     </div>
                     
                     <div class="filter-section">
-                        <h4>Price Range</h4>
-                        <div class="price-range">
+                        <h4>
+                            <i class="fas fa-rupee-sign"></i>
+                            Price Range
+                        </h4>
+                        <div class="price-range-container">
                             <div class="price-inputs">
-                                <input type="number" placeholder="Min ₹" id="minPrice" onchange="applyFilters()">
-                                <span>to</span>
-                                <input type="number" placeholder="Max ₹" id="maxPrice" onchange="applyFilters()">
+                                <div class="price-input-wrapper">
+                                    <span>₹</span>
+                                    <input type="number" placeholder="Min" id="minPrice" onchange="applyFilters()">
+                                </div>
+                                <div class="price-divider">to</div>
+                                <div class="price-input-wrapper">
+                                    <span>₹</span>
+                                    <input type="number" placeholder="Max" id="maxPrice" onchange="applyFilters()">
+                                </div>
                             </div>
-                            <div class="price-slider">
-                                <input type="range" min="0" max="10000" value="0" id="priceSliderMin" oninput="updatePriceInputs()">
-                                <input type="range" min="0" max="10000" value="10000" id="priceSliderMax" oninput="updatePriceInputs()">
+                            <div class="price-slider-container">
+                                <input type="range" min="0" max="50000" value="0" id="priceSliderMin" class="price-slider" oninput="updatePriceInputs()">
+                                <input type="range" min="0" max="50000" value="50000" id="priceSliderMax" class="price-slider" oninput="updatePriceInputs()">
                             </div>
                             <div class="price-labels">
                                 <span>₹0</span>
-                                <span>₹10,000+</span>
+                                <span>₹50,000+</span>
                             </div>
                         </div>
                     </div>
                 </aside>
 
-                <!-- Events Grid -->
+                <!-- Events Content -->
                 <div class="events-content">
                     <div class="active-filters" id="activeFilters">
                         <!-- Active filters will be displayed here -->
@@ -255,12 +335,16 @@
                     
                     <div class="events-grid" id="eventsGrid">
                         <!-- Events will be loaded here by JavaScript -->
+                        <div class="loading-container">
+                            <div class="loading-spinner"></div>
+                            <p>Loading amazing events...</p>
+                        </div>
                     </div>
 
                     <!-- Load More -->
                     <div class="load-more-container">
                         <button class="load-more-btn" id="loadMoreBtn" onclick="loadMoreEvents()">
-                            Load more events
+                            <span>Load more events</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
                     </div>
@@ -271,7 +355,7 @@
 
     <!-- Event Detail Modal -->
     <div class="modal-overlay" id="eventModal">
-        <div class="modal-content">
+        <div class="modal-content event-modal">
             <button class="modal-close" onclick="closeEventModal()">
                 <i class="fas fa-times"></i>
             </button>
@@ -285,7 +369,10 @@
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3>Your Cart</h3>
+            <h3>
+                <i class="fas fa-shopping-cart"></i>
+                Your Cart
+            </h3>
             <button class="cart-close" onclick="toggleCart()">
                 <i class="fas fa-times"></i>
             </button>
@@ -293,9 +380,15 @@
         
         <div class="cart-content" id="cartContent">
             <div class="empty-cart" id="emptyCart">
-                <i class="fas fa-shopping-cart"></i>
-                <p>Your cart is empty</p>
-                <small>Add tickets to get started</small>
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h4>Your cart is empty</h4>
+                <p>Add some amazing events to get started</p>
+                <button class="browse-events-btn" onclick="toggleCart()">
+                    <i class="fas fa-search"></i>
+                    Browse Events
+                </button>
             </div>
             
             <div class="cart-items" id="cartItems">
@@ -304,22 +397,23 @@
         </div>
         
         <div class="cart-footer" id="cartFooter" style="display: none;">
-            <div class="cart-total">
-                <div class="total-row">
+            <div class="cart-summary">
+                <div class="summary-row">
                     <span>Subtotal</span>
                     <span id="cartSubtotal">₹0</span>
                 </div>
-                <div class="total-row">
+                <div class="summary-row">
                     <span>Service fees</span>
                     <span id="cartFees">₹0</span>
                 </div>
-                <div class="total-row final">
+                <div class="summary-row total">
                     <span>Total</span>
                     <span id="cartTotal">₹0</span>
                 </div>
             </div>
             <button class="checkout-btn" onclick="proceedToCheckout()">
-                Proceed to Checkout
+                <i class="fas fa-lock"></i>
+                Secure Checkout
                 <i class="fas fa-arrow-right"></i>
             </button>
         </div>
@@ -334,8 +428,11 @@
             
             <div class="checkout-content">
                 <div class="checkout-header">
-                    <h2>Secure Checkout</h2>
-                    <p>Complete your purchase safely</p>
+                    <h2>
+                        <i class="fas fa-lock"></i>
+                        Secure Checkout
+                    </h2>
+                    <p>Complete your purchase safely and securely</p>
                 </div>
                 
                 <div class="checkout-body">
@@ -343,8 +440,14 @@
                         <div class="section">
                             <h3>Contact Information</h3>
                             <div class="form-grid">
-                                <input type="email" placeholder="Email address" id="buyerEmail" required>
-                                <input type="tel" placeholder="Phone number" id="buyerPhone" required>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" placeholder="Email address" id="buyerEmail" required>
+                                </div>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-phone"></i>
+                                    <input type="tel" placeholder="Phone number" id="buyerPhone" required>
+                                </div>
                             </div>
                         </div>
                         
@@ -354,20 +457,26 @@
                                 <label class="payment-option active">
                                     <input type="radio" name="paymentMethod" value="card" checked>
                                     <span class="radio-custom"></span>
-                                    <i class="fas fa-credit-card"></i>
-                                    Credit/Debit Card
+                                    <div class="payment-option-content">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>Credit/Debit Card</span>
+                                    </div>
                                 </label>
                                 <label class="payment-option">
                                     <input type="radio" name="paymentMethod" value="upi">
                                     <span class="radio-custom"></span>
-                                    <i class="fab fa-google-pay"></i>
-                                    UPI
+                                    <div class="payment-option-content">
+                                        <i class="fab fa-google-pay"></i>
+                                        <span>UPI Payment</span>
+                                    </div>
                                 </label>
                                 <label class="payment-option">
                                     <input type="radio" name="paymentMethod" value="netbanking">
                                     <span class="radio-custom"></span>
-                                    <i class="fas fa-university"></i>
-                                    Net Banking
+                                    <div class="payment-option-content">
+                                        <i class="fas fa-university"></i>
+                                        <span>Net Banking</span>
+                                    </div>
                                 </label>
                             </div>
                         </div>
@@ -375,19 +484,32 @@
                         <div class="section" id="cardDetails">
                             <h3>Card Details</h3>
                             <div class="form-grid">
-                                <input type="text" placeholder="Card number" id="cardNumber" maxlength="19">
-                                <div class="card-row">
+                                <div class="input-wrapper full-width">
+                                    <i class="fas fa-credit-card"></i>
+                                    <input type="text" placeholder="1234 5678 9012 3456" id="cardNumber" maxlength="19">
+                                </div>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-calendar"></i>
                                     <input type="text" placeholder="MM/YY" id="cardExpiry" maxlength="5">
+                                </div>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-lock"></i>
                                     <input type="text" placeholder="CVV" id="cardCvv" maxlength="3">
                                 </div>
-                                <input type="text" placeholder="Cardholder name" id="cardName">
+                                <div class="input-wrapper full-width">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Cardholder name" id="cardName">
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="checkout-right">
                         <div class="order-summary">
-                            <h3>Order Summary</h3>
+                            <h3>
+                                <i class="fas fa-receipt"></i>
+                                Order Summary
+                            </h3>
                             <div class="summary-items" id="checkoutItems">
                                 <!-- Items will be populated here -->
                             </div>
@@ -402,7 +524,7 @@
                                     <span id="checkoutFees">₹0</span>
                                 </div>
                                 <div class="total-row">
-                                    <span>Taxes</span>
+                                    <span>GST (18%)</span>
                                     <span id="checkoutTaxes">₹0</span>
                                 </div>
                                 <div class="total-row final">
@@ -413,13 +535,19 @@
                         </div>
                         
                         <button class="pay-btn" onclick="processPayment()">
-                            <i class="fas fa-lock"></i>
-                            Pay Securely
+                            <i class="fas fa-shield-alt"></i>
+                            Pay ₹<span id="payAmount">0</span>
                         </button>
                         
-                        <div class="security-info">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Your payment is protected by 256-bit SSL encryption</span>
+                        <div class="security-badges">
+                            <div class="security-info">
+                                <i class="fas fa-lock"></i>
+                                <span>256-bit SSL encryption</span>
+                            </div>
+                            <div class="security-info">
+                                <i class="fas fa-shield-check"></i>
+                                <span>PCI DSS compliant</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -430,68 +558,105 @@
     <!-- Notification -->
     <div class="notification" id="notification">
         <div class="notification-content">
-            <i class="fas fa-check-circle"></i>
+            <div class="notification-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
             <span id="notificationText">Success!</span>
+            <button class="notification-close" onclick="hideNotification()">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
     </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section brand-section">
                     <div class="footer-brand">
-                        <i class="fas fa-ticket-alt"></i>
-                        <span>TicketAdda</span>
+                        <img src="logo png.png" alt="TicketAdda" class="footer-logo">
                     </div>
-                    <p>India's most trusted ticket marketplace for concerts, sports, theater, and more.</p>
+                    <p>India's most trusted ticket marketplace for concerts, sports, theater, and entertainment events. Join millions of users discovering amazing experiences.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Buy tickets</h4>
+                    <h4>Discover</h4>
                     <ul>
                         <li><a href="#" onclick="filterByCategory('concerts')">Concerts</a></li>
-                        <li><a href="#" onclick="filterByCategory('sports')">Sports</a></li>
-                        <li><a href="#" onclick="filterByCategory('theater')">Theater</a></li>
-                        <li><a href="#" onclick="filterByCategory('comedy')">Comedy</a></li>
-                        <li><a href="#" onclick="clearAllFilters()">All events</a></li>
+                        <li><a href="#" onclick="filterByCategory('sports')">Sports Events</a></li>
+                        <li><a href="#" onclick="filterByCategory('theater')">Theater Shows</a></li>
+                        <li><a href="#" onclick="filterByCategory('comedy')">Comedy Shows</a></li>
+                        <li><a href="#" onclick="filterByCategory('festivals')">Festivals</a></li>
+                        <li><a href="#" onclick="clearAllFilters()">All Events</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Sell tickets</h4>
+                    <h4>Sell Tickets</h4>
                     <ul>
-                        <li><a href="sell.html">Sell tickets</a></li>
-                        <li><a href="help.html">How to sell</a></li>
-                        <li><a href="help.html">Pricing</a></li>
-                        <li><a href="help.html">Seller protection</a></li>
+                        <li><a href="sell.html">List Your Tickets</a></li>
+                        <li><a href="#">How to Sell</a></li>
+                        <li><a href="#">Pricing Guide</a></li>
+                        <li><a href="#">Seller Protection</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Seller Resources</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Support</h4>
                     <ul>
-                        <li><a href="help.html">Help center</a></li>
-                        <li><a href="help.html">Contact us</a></li>
-                        <li><a href="help.html">TicketAdda Guarantee</a></li>
-                        <li><a href="terms.html">Terms of use</a></li>
-                        <li><a href="privacy.html">Privacy policy</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">TicketAdda Guarantee</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
+                    <div class="footer-certifications">
+                        <span>
+                            <i class="fas fa-shield-check"></i>
+                            SSL Secured
+                        </span>
+                        <span>
+                            <i class="fas fa-award"></i>
+                            ISO Certified
+                        </span>
+                    </div>
+                </div>
                 <div class="footer-links">
-                    <a href="terms.html">Terms</a>
-                    <a href="privacy.html">Privacy</a>
-                    <a href="help.html">Help</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Help</a>
+                    <a href="#">Accessibility</a>
                 </div>
             </div>
         </div>
