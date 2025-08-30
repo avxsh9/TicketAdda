@@ -1,25 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TicketAdda - Unforgettable Events</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in India - TicketAdda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="events.css">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800" as="style" onload="this.rel='stylesheet'">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body class="bg-gray-100 text-gray-800" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
-    <div id="app"></div>
-    <div id="modal-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"></div>
-    <div id="cart-sidebar" class="hidden fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300"></div>
-    <div id="notification" class="hidden fixed top-24 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300"></div>
-    <script type="module" src="events.js"></script>
-  </body>
-</html>
-=======
 </head>
 <body>
     <!-- Header -->
@@ -32,17 +21,17 @@
                 </a>
                 
                 <div class="nav-search">
-                    <!-- <div class="search-bar">
+                    <div class="search-bar">
                         <i class="fas fa-search"></i>
                         <input type="text" placeholder="Search events, artists, teams, or venues" id="mainSearch">
-                        <button class="search-btn">Search</button>
-                    </div> -->
+                        <button class="search-btn" onclick="performMainSearch()">Search</button>
+                    </div>
                 </div>
                 
                 <div class="nav-menu">
-                    <a href="events.html" class="nav-link active">Sports</a>
-                    <a href="events.html" class="nav-link">Concerts</a>
-                    <a href="events.html" class="nav-link">Theater</a>
+                    <a href="#" class="nav-link active" data-category="sports">Sports</a>
+                    <a href="#" class="nav-link" data-category="concerts">Concerts</a>
+                    <a href="#" class="nav-link" data-category="theater">Theater</a>
                     <a href="sell.html" class="nav-link sell-link">
                         <i class="fas fa-plus-circle"></i>
                         Sell
@@ -51,11 +40,39 @@
                 
                 <div class="nav-actions">
                     <a href="help.html" class="nav-link">Help</a>
+                    <button class="cart-btn" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
                     <a href="login.html" class="btn-login">Sign in</a>
+                </div>
+                
+                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <span>Menu</span>
+                <button onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="#" data-category="sports">Sports</a>
+                <a href="#" data-category="concerts">Concerts</a>
+                <a href="#" data-category="theater">Theater</a>
+                <a href="sell.html">Sell Tickets</a>
+                <a href="help.html">Help</a>
+                <a href="login.html">Sign in</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Search Header -->
     <section class="search-header">
@@ -72,7 +89,7 @@
                 </div>
                 
                 <div class="filter-controls">
-                    <button class="filter-btn" id="filterBtn">
+                    <button class="filter-btn" id="filterBtn" onclick="toggleFilters()">
                         <i class="fas fa-filter"></i>
                         Filters
                     </button>
@@ -98,38 +115,38 @@
                 <aside class="filters-sidebar" id="filtersSidebar">
                     <div class="filters-header">
                         <h3>Filters</h3>
-                        <button class="clear-filters" id="clearFilters">Clear all</button>
+                        <button class="clear-filters" id="clearFilters" onclick="clearAllFilters()">Clear all</button>
                     </div>
                     
                     <div class="filter-section">
                         <h4>Category</h4>
                         <div class="filter-options">
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="sports" checked>
+                                <input type="checkbox" value="sports" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Sports
                                 <span class="count">(456)</span>
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="concerts">
+                                <input type="checkbox" value="concerts" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Concerts
                                 <span class="count">(234)</span>
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="theater">
+                                <input type="checkbox" value="theater" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Theater
                                 <span class="count">(123)</span>
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="comedy">
+                                <input type="checkbox" value="comedy" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Comedy
                                 <span class="count">(89)</span>
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="festivals">
+                                <input type="checkbox" value="festivals" data-filter="category" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Festivals
                                 <span class="count">(67)</span>
@@ -141,37 +158,37 @@
                         <h4>Location</h4>
                         <div class="filter-options">
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="mumbai" checked>
+                                <input type="checkbox" value="mumbai" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Mumbai
                                 <span class="count">(345)</span>
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="delhi">
+                                <input type="checkbox" value="delhi" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Delhi
                                 <span class="count">(298)</span>
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="bangalore">
+                                <input type="checkbox" value="bangalore" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Bangalore
                                 <span class="count">(234)</span>
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="pune">
+                                <input type="checkbox" value="pune" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Pune
                                 <span class="count">(187)</span>
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="hyderabad">
+                                <input type="checkbox" value="hyderabad" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Hyderabad
                                 <span class="count">(156)</span>
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="chennai">
+                                <input type="checkbox" value="chennai" data-filter="location" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Chennai
                                 <span class="count">(134)</span>
@@ -183,27 +200,27 @@
                         <h4>Date</h4>
                         <div class="filter-options">
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="today">
+                                <input type="checkbox" value="today" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Today
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="tomorrow">
+                                <input type="checkbox" value="tomorrow" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Tomorrow
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="this-week">
+                                <input type="checkbox" value="this-week" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 This week
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="this-month">
+                                <input type="checkbox" value="this-month" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 This month
                             </label>
                             <label class="filter-checkbox">
-                                <input type="checkbox" value="next-month">
+                                <input type="checkbox" value="next-month" data-filter="date" onchange="applyFilters()">
                                 <span class="checkmark"></span>
                                 Next month
                             </label>
@@ -214,13 +231,13 @@
                         <h4>Price Range</h4>
                         <div class="price-range">
                             <div class="price-inputs">
-                                <input type="number" placeholder="Min ₹" id="minPrice">
+                                <input type="number" placeholder="Min ₹" id="minPrice" onchange="applyFilters()">
                                 <span>to</span>
-                                <input type="number" placeholder="Max ₹" id="maxPrice">
+                                <input type="number" placeholder="Max ₹" id="maxPrice" onchange="applyFilters()">
                             </div>
                             <div class="price-slider">
-                                <input type="range" min="0" max="10000" value="0" id="priceSliderMin">
-                                <input type="range" min="0" max="10000" value="10000" id="priceSliderMax">
+                                <input type="range" min="0" max="10000" value="0" id="priceSliderMin" oninput="updatePriceInputs()">
+                                <input type="range" min="0" max="10000" value="10000" id="priceSliderMax" oninput="updatePriceInputs()">
                             </div>
                             <div class="price-labels">
                                 <span>₹0</span>
@@ -233,186 +250,16 @@
                 <!-- Events Grid -->
                 <div class="events-content">
                     <div class="active-filters" id="activeFilters">
-                        <span class="filter-tag">
-                            Sports
-                            <button class="remove-filter" data-filter="sports">×</button>
-                        </span>
-                        <span class="filter-tag">
-                            Mumbai
-                            <button class="remove-filter" data-filter="mumbai">×</button>
-                        </span>
+                        <!-- Active filters will be displayed here -->
                     </div>
                     
                     <div class="events-grid" id="eventsGrid">
-                        <!-- Event Card 1 -->
-                        <div class="event-card" onclick="location.href='event-detail.html?id=1'">
-                            <div class="event-image">
-                                <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=300&h=200&fit=crop" alt="IPL Match">
-                                <div class="event-badge trending">Trending</div>
-                                <div class="event-price">From ₹1,200</div>
-                            </div>
-                            <div class="event-details">
-                                <div class="event-category">Cricket</div>
-                                <h3 class="event-title">Mumbai Indians vs Chennai Super Kings</h3>
-                                <p class="event-venue">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Wankhede Stadium, Mumbai
-                                </p>
-                                <p class="event-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Sunday, April 20 • 3:30 PM
-                                </p>
-                                <div class="event-stats">
-                                    <span class="tickets-available">
-                                        <i class="fas fa-ticket-alt"></i>
-                                        89 tickets available
-                                    </span>
-                                    <span class="price-range">₹1,200 - ₹8,500</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Event Card 2 -->
-                        <div class="event-card" onclick="location.href='event-detail.html?id=2'">
-                            <div class="event-image">
-                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop" alt="Arijit Singh Concert">
-                                <div class="event-badge hot">Hot</div>
-                                <div class="event-price">From ₹2,500</div>
-                            </div>
-                            <div class="event-details">
-                                <div class="event-category">Concert</div>
-                                <h3 class="event-title">Arijit Singh Live in Concert</h3>
-                                <p class="event-venue">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    NSCI Dome, Mumbai
-                                </p>
-                                <p class="event-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Saturday, November 15 • 7:00 PM
-                                </p>
-                                <div class="event-stats">
-                                    <span class="tickets-available">
-                                        <i class="fas fa-ticket-alt"></i>
-                                        234 tickets available
-                                    </span>
-                                    <span class="price-range">₹2,500 - ₹12,000</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Event Card 3 -->
-                        <div class="event-card" onclick="location.href='event-detail.html?id=3'">
-                            <div class="event-image">
-                                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=300&h=200&fit=crop" alt="ISL Football">
-                                <div class="event-price">From ₹800</div>
-                            </div>
-                            <div class="event-details">
-                                <div class="event-category">Football</div>
-                                <h3 class="event-title">Mumbai City FC vs Bengaluru FC</h3>
-                                <p class="event-venue">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Mumbai Football Arena, Mumbai
-                                </p>
-                                <p class="event-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Friday, December 8 • 7:30 PM
-                                </p>
-                                <div class="event-stats">
-                                    <span class="tickets-available">
-                                        <i class="fas fa-ticket-alt"></i>
-                                        156 tickets available
-                                    </span>
-                                    <span class="price-range">₹800 - ₹3,500</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Event Card 4 -->
-                        <div class="event-card" onclick="location.href='event-detail.html?id=4'">
-                            <div class="event-image">
-                                <img src="https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=300&h=200&fit=crop" alt="Theater Show">
-                                <div class="event-price">From ₹1,500</div>
-                            </div>
-                            <div class="event-details">
-                                <div class="event-category">Theater</div>
-                                <h3 class="event-title">Mughal-E-Azam - The Musical</h3>
-                                <p class="event-venue">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    NCPA, Mumbai
-                                </p>
-                                <p class="event-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Saturday, November 30 • 7:30 PM
-                                </p>
-                                <div class="event-stats">
-                                    <span class="tickets-available">
-                                        <i class="fas fa-ticket-alt"></i>
-                                        67 tickets available
-                                    </span>
-                                    <span class="price-range">₹1,500 - ₹6,000</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Event Card 5 -->
-                        <div class="event-card" onclick="location.href='event-detail.html?id=5'">
-                            <div class="event-image">
-                                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=300&h=200&fit=crop" alt="Pro Kabaddi">
-                                <div class="event-price">From ₹500</div>
-                            </div>
-                            <div class="event-details">
-                                <div class="event-category">Kabaddi</div>
-                                <h3 class="event-title">U Mumba vs Puneri Paltan</h3>
-                                <p class="event-venue">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Sardar Vallabhbhai Patel Stadium, Mumbai
-                                </p>
-                                <p class="event-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Thursday, January 18 • 8:00 PM
-                                </p>
-                                <div class="event-stats">
-                                    <span class="tickets-available">
-                                        <i class="fas fa-ticket-alt"></i>
-                                        298 tickets available
-                                    </span>
-                                    <span class="price-range">₹500 - ₹2,000</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Event Card 6 -->
-                        <div class="event-card" onclick="location.href='event-detail.html?id=6'">
-                            <div class="event-image">
-                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop" alt="Bollywood Concert">
-                                <div class="event-badge new">New</div>
-                                <div class="event-price">From ₹1,800</div>
-                            </div>
-                            <div class="event-details">
-                                <div class="event-category">Concert</div>
-                                <h3 class="event-title">Bollywood Night Live</h3>
-                                <p class="event-venue">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Jio Garden, Mumbai
-                                </p>
-                                <p class="event-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Friday, December 8 • 8:00 PM
-                                </p>
-                                <div class="event-stats">
-                                    <span class="tickets-available">
-                                        <i class="fas fa-ticket-alt"></i>
-                                        189 tickets available
-                                    </span>
-                                    <span class="price-range">₹1,800 - ₹7,500</span>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Events will be loaded here by JavaScript -->
                     </div>
 
                     <!-- Load More -->
                     <div class="load-more-container">
-                        <button class="load-more-btn" id="loadMoreBtn">
+                        <button class="load-more-btn" id="loadMoreBtn" onclick="loadMoreEvents()">
                             Load more events
                             <i class="fas fa-chevron-down"></i>
                         </button>
@@ -421,6 +268,172 @@
             </div>
         </div>
     </main>
+
+    <!-- Event Detail Modal -->
+    <div class="modal-overlay" id="eventModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEventModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="event-detail" id="eventDetail">
+                <!-- Event detail content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-content" id="cartContent">
+            <div class="empty-cart" id="emptyCart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <small>Add tickets to get started</small>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be displayed here -->
+            </div>
+        </div>
+        
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">₹0</span>
+                </div>
+                <div class="total-row">
+                    <span>Service fees</span>
+                    <span id="cartFees">₹0</span>
+                </div>
+                <div class="total-row final">
+                    <span>Total</span>
+                    <span id="cartTotal">₹0</span>
+                </div>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">
+                Proceed to Checkout
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+            <button class="modal-close" onclick="closeCheckoutModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="checkout-content">
+                <div class="checkout-header">
+                    <h2>Secure Checkout</h2>
+                    <p>Complete your purchase safely</p>
+                </div>
+                
+                <div class="checkout-body">
+                    <div class="checkout-left">
+                        <div class="section">
+                            <h3>Contact Information</h3>
+                            <div class="form-grid">
+                                <input type="email" placeholder="Email address" id="buyerEmail" required>
+                                <input type="tel" placeholder="Phone number" id="buyerPhone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="section">
+                            <h3>Payment Method</h3>
+                            <div class="payment-methods">
+                                <label class="payment-option active">
+                                    <input type="radio" name="paymentMethod" value="card" checked>
+                                    <span class="radio-custom"></span>
+                                    <i class="fas fa-credit-card"></i>
+                                    Credit/Debit Card
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="upi">
+                                    <span class="radio-custom"></span>
+                                    <i class="fab fa-google-pay"></i>
+                                    UPI
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="netbanking">
+                                    <span class="radio-custom"></span>
+                                    <i class="fas fa-university"></i>
+                                    Net Banking
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="section" id="cardDetails">
+                            <h3>Card Details</h3>
+                            <div class="form-grid">
+                                <input type="text" placeholder="Card number" id="cardNumber" maxlength="19">
+                                <div class="card-row">
+                                    <input type="text" placeholder="MM/YY" id="cardExpiry" maxlength="5">
+                                    <input type="text" placeholder="CVV" id="cardCvv" maxlength="3">
+                                </div>
+                                <input type="text" placeholder="Cardholder name" id="cardName">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-right">
+                        <div class="order-summary">
+                            <h3>Order Summary</h3>
+                            <div class="summary-items" id="checkoutItems">
+                                <!-- Items will be populated here -->
+                            </div>
+                            
+                            <div class="summary-totals">
+                                <div class="total-row">
+                                    <span>Subtotal</span>
+                                    <span id="checkoutSubtotal">₹0</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Service fees</span>
+                                    <span id="checkoutFees">₹0</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Taxes</span>
+                                    <span id="checkoutTaxes">₹0</span>
+                                </div>
+                                <div class="total-row final">
+                                    <span>Total</span>
+                                    <span id="checkoutTotal">₹0</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="pay-btn" onclick="processPayment()">
+                            <i class="fas fa-lock"></i>
+                            Pay Securely
+                        </button>
+                        
+                        <div class="security-info">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Your payment is protected by 256-bit SSL encryption</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notificationText">Success!</span>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -443,11 +456,11 @@
                 <div class="footer-section">
                     <h4>Buy tickets</h4>
                     <ul>
-                        <li><a href="events.html?category=concerts">Concerts</a></li>
-                        <li><a href="events.html?category=sports">Sports</a></li>
-                        <li><a href="events.html?category=theater">Theater</a></li>
-                        <li><a href="events.html?category=comedy">Comedy</a></li>
-                        <li><a href="events.html">All events</a></li>
+                        <li><a href="#" onclick="filterByCategory('concerts')">Concerts</a></li>
+                        <li><a href="#" onclick="filterByCategory('sports')">Sports</a></li>
+                        <li><a href="#" onclick="filterByCategory('theater')">Theater</a></li>
+                        <li><a href="#" onclick="filterByCategory('comedy')">Comedy</a></li>
+                        <li><a href="#" onclick="clearAllFilters()">All events</a></li>
                     </ul>
                 </div>
                 
@@ -484,8 +497,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script src="events.js"></script>
 </body>
 </html>
->>>>>>> 2abe949195cdf6ab11c200f45c35e046f80cec68
