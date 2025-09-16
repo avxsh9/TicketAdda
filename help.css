@@ -56,3 +56,33 @@
     border-color: #ff6b35;
     box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
 }
+/* Center both buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Make both buttons look the same (white background, orange text) */
+.cta-buttons .btn-primary,
+.cta-buttons .btn-secondary {
+    background-color: #fff;
+    color: #ff6600; /* Orange text */
+    border: 2px solid #ff6600;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Hover effect for both buttons */
+.cta-buttons .btn-primary:hover,
+.cta-buttons .btn-secondary:hover {
+    background-color: #ffcc99; /* Light orange */
+    color: #000; /* Dark text for contrast */
+    border-color: #ff6600;
+}
