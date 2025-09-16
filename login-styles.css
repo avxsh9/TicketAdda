@@ -59,7 +59,7 @@ body {
 }
 
 .nav-brand i {
-    color: #ff6b35;
+    color: #3b82f6;
     font-size: 28px;
 }
 
@@ -111,7 +111,7 @@ body {
 .input-wrapper i {
     position: absolute;
     left: 16px;
-    color: #ff6b35;
+    color: #3b82f6;
     z-index: 2;
 }
 
@@ -127,7 +127,7 @@ body {
 
 .input-wrapper input:focus {
     outline: none;
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
 }
 
@@ -168,11 +168,11 @@ body {
     transition: all 0.2s ease;
 }
 
-.checkbox-wrapper:hover .checkmark { border-color: #ff6b35; }
+.checkbox-wrapper:hover .checkmark { border-color: #3b82f6; }
 
 .checkbox-wrapper input:checked ~ .checkmark {
-    background-color: #ff6b35;
-    border-color: #ff6b35;
+    background-color: #3b82f6;
+    border-color: #3b82f6;
 }
 
 .checkmark::after {
@@ -197,7 +197,7 @@ body {
 }
 
 .forgot-link {
-    color: #ff6b35;
+    color: #3b82f6;
     text-decoration: none;
 }
 .forgot-link:hover { text-decoration: underline; }
@@ -220,7 +220,7 @@ body {
 }
 
 .btn-primary {
-    background: #ff6b35;
+    background: #3b82f6;
     color: white;
     box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
 }
@@ -231,8 +231,8 @@ body {
 
 .btn-secondary {
     background: white;
-    color: #ff6b35;
-    border: 2px solid #ff6b35;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
     padding: 8px 16px;
     width: auto;
 }
@@ -278,7 +278,7 @@ body {
 
 /* --- Visual Section (Right Side) --- */
 .auth-visual-section {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #ff8c42 100%);
     color: white;
     padding: 60px;
     display: flex;

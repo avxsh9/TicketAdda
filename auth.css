@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #ff6b35;
+    color: #3b82f6;
     font-weight: 800;
     font-size: 24px;
     gap: 8px;
@@ -39,8 +39,8 @@
 }
 
 .btn-outline {
-    border: 2px solid #ff6b35;
-    color: #ff6b35;
+    border: 2px solid #3b82f6;
+    color: #3b82f6;
     background: transparent;
     padding: 8px 20px;
     border-radius: 6px;
@@ -51,7 +51,7 @@
 }
 
 .btn-outline:hover {
-    background: #ff6b35;
+    background: #3b82f6;
     color: white;
 }
 
@@ -143,7 +143,7 @@
 
 .input-wrapper input:focus {
     outline: none;
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
@@ -165,7 +165,7 @@
 }
 
 .toggle-password:hover {
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 /* Password Strength */
@@ -251,12 +251,12 @@
 }
 
 .checkbox-wrapper:hover .checkmark {
-    border-color: #ff6b35;
+    border-color: #3b82f6;
 }
 
 .checkbox-wrapper input:checked ~ .checkmark {
-    background: #ff6b35;
-    border-color: #ff6b35;
+    background: #3b82f6;
+    border-color: #3b82f6;
 }
 
 .checkmark:after {
@@ -281,7 +281,7 @@
 }
 
 .checkbox-text a {
-    color: #ff6b35;
+    color: #3b82f6;
     text-decoration: none;
     font-weight: 500;
 }
@@ -291,7 +291,7 @@
 }
 
 .forgot-link {
-    color: #ff6b35;
+    color: #3b82f6;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -303,7 +303,7 @@
 
 /* Buttons */
 .btn-primary {
-    background: #ff6b35;
+    background: #3b82f6;
     color: white;
     border: none;
     padding: 16px 24px;
@@ -383,7 +383,7 @@
 }
 
 .btn-social:hover {
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     box-shadow: 0 2px 8px rgba(255, 107, 53, 0.1);
 }
 
@@ -458,7 +458,7 @@
 
 .feature-icon i {
     font-size: 24px;
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 .feature-card h3 {
@@ -492,7 +492,7 @@
 .stat-number {
     font-size: 28px;
     font-weight: 800;
-    color: #ff6b35;
+    color: #3b82f6;
     margin-bottom: 8px;
 }
 
@@ -610,7 +610,7 @@
     width: 20px;
     height: 20px;
     border: 2px solid #f3f3f3;
-    border-top: 2px solid #ff6b35;
+    border-top: 2px solid #3b82f6;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -780,7 +780,7 @@
     }
     
     .input-wrapper input:focus {
-        border-color: #ff6b35;
+        border-color: #3b82f6;
     }
     
     .feature-card,

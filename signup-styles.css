@@ -58,7 +58,7 @@ body {
 }
 
 .nav-brand i {
-    color: #ff6b35;
+    color: #3b82f6;
     font-size: 28px;
 }
 
@@ -110,7 +110,7 @@ body {
 .input-wrapper i {
     position: absolute;
     left: 16px;
-    color: #ff6b35;
+    color: #3b82f6;
     z-index: 2;
 }
 
@@ -126,7 +126,7 @@ body {
 
 .input-wrapper input:focus {
     outline: none;
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
 }
 
@@ -170,12 +170,12 @@ body {
 .checkbox-wrapper { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
 .checkbox-wrapper input[type="checkbox"] { display: none; }
 .checkmark { width: 20px; height: 20px; border: 2px solid #e9ecef; border-radius: 4px; position: relative; transition: all 0.2s ease; flex-shrink: 0; margin-top: 2px; }
-.checkbox-wrapper:hover .checkmark { border-color: #ff6b35; }
-.checkbox-wrapper input:checked ~ .checkmark { background-color: #ff6b35; border-color: #ff6b35; }
+.checkbox-wrapper:hover .checkmark { border-color: #3b82f6; }
+.checkbox-wrapper input:checked ~ .checkmark { background-color: #3b82f6; border-color: #3b82f6; }
 .checkmark::after { content: ""; position: absolute; display: none; left: 6px; top: 2px; width: 4px; height: 10px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
 .checkbox-wrapper input:checked ~ .checkmark::after { display: block; }
 .checkbox-text { font-size: 14px; color: #495057; }
-.checkbox-text a { color: #ff6b35; text-decoration: none; font-weight: 600; }
+.checkbox-text a { color: #3b82f6; text-decoration: none; font-weight: 600; }
 .checkbox-text a:hover { text-decoration: underline; }
 
 /* Error Message */
@@ -188,9 +188,9 @@ body {
     display: flex; align-items: center; justify-content: center; gap: 10px;
     transition: all 0.2s ease; cursor: pointer; border: none; text-decoration: none; width: 100%;
 }
-.btn-primary { background: #ff6b35; color: white; box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3); margin-top: 16px; }
+.btn-primary { background: #3b82f6; color: white; box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3); margin-top: 16px; }
 .btn-primary:hover { background: #e55a2b; transform: translateY(-2px); }
-.btn-secondary { background: white; color: #ff6b35; border: 2px solid #ff6b35; padding: 8px 16px; width: auto; }
+.btn-secondary { background: white; color: #3b82f6; border: 2px solid #3b82f6; padding: 8px 16px; width: auto; }
 .btn-secondary:hover { background: #fff5f3; }
 .btn-social { background: #f8f9fa; color: #495057; border: 2px solid #e9ecef; font-weight: 600; }
 .btn-social:hover { border-color: #adb5bd; }
@@ -204,7 +204,7 @@ body {
 
 /* --- Visual Section (Right Side) --- */
 .auth-visual-section {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #ff8c42 100%);
     color: white; padding: 60px; display: flex; align-items: center; justify-content: center; text-align: center;
 }
 .visual-header h2 { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }

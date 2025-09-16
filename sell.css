@@ -52,7 +52,7 @@ body {
 }
 
 .nav-brand i {
-    color: #ff6b35;
+    color: #3b82f6;
     font-size: 28px;
 }
 
@@ -90,11 +90,11 @@ body {
 .search-bar input:focus {
     outline: none;
     background: white;
-    box-shadow: 0 0 0 2px #ff6b35;
+    box-shadow: 0 0 0 2px #3b82f6;
 }
 
 .search-btn {
-    background: #ff6b35;
+    background: #3b82f6;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -126,7 +126,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 .sell-link {
@@ -143,7 +143,7 @@ body {
 }
 
 .btn-login {
-    background: #ff6b35;
+    background: #3b82f6;
     color: white;
     text-decoration: none;
     padding: 10px 20px;
@@ -158,7 +158,7 @@ body {
 
 /* Hero Section */
 .sell-hero {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #ff8c42 100%);
     color: white;
     padding: 80px 0;
     position: relative;
@@ -245,7 +245,7 @@ body {
 
 .btn-primary.btn-large {
     background: white;
-    color: #ff6b35;
+    color: #3b82f6;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -312,7 +312,7 @@ body {
 }
 
 .price-input:focus-within {
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
@@ -347,7 +347,7 @@ body {
 }
 
 .form-group select:focus {
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
@@ -370,7 +370,7 @@ body {
     padding-top: 16px;
     font-weight: 700;
     font-size: 18px;
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 /* Sell Form Section */
@@ -453,8 +453,8 @@ body {
 }
 
 .step.active .step-number {
-    background: #ff6b35;
-    border-color: #ff6b35;
+    background: #3b82f6;
+    border-color: #3b82f6;
     color: white;
 }
 
@@ -467,7 +467,7 @@ body {
 }
 
 .step.active span {
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 /* Form Steps */
@@ -526,7 +526,7 @@ body {
 .input-wrapper i {
     position: absolute;
     left: 16px;
-    color: #ff6b35;
+    color: #3b82f6;
     z-index: 2;
 }
 
@@ -544,7 +544,7 @@ body {
 .input-wrapper input:focus,
 .input-wrapper select:focus {
     outline: none;
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
 }
 
@@ -567,7 +567,7 @@ body {
 }
 
 .radio-option:hover {
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     background: #fff5f3;
 }
 
@@ -587,8 +587,8 @@ body {
 }
 
 .radio-option input[type="radio"]:checked ~ .radio-custom {
-    border-color: #ff6b35;
-    background: #ff6b35;
+    border-color: #3b82f6;
+    background: #3b82f6;
 }
 
 .radio-custom::after {
@@ -645,7 +645,7 @@ body {
 }
 
 .price-input-wrapper:focus-within {
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
 }
 
@@ -698,7 +698,7 @@ body {
 }
 
 .suggestion-btn:hover {
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     background: #fff5f3;
 }
 
@@ -714,7 +714,7 @@ body {
 }
 
 .pricing-note i {
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 /* Earnings Preview */
@@ -753,7 +753,7 @@ body {
     padding-top: 16px;
     font-weight: 700;
     font-size: 18px;
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 .payment-info {
@@ -768,7 +768,7 @@ body {
 }
 
 .payment-info i {
-    color: #ff6b35;
+    color: #3b82f6;
     margin-top: 2px;
 }
 
@@ -800,7 +800,7 @@ body {
 }
 
 .preview-category {
-    background: #ff6b35;
+    background: #3b82f6;
     color: white;
     padding: 6px 16px;
     border-radius: 20px;
@@ -826,7 +826,7 @@ body {
 
 .detail-row i {
     width: 20px;
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 /* Terms Agreement */
@@ -861,12 +861,12 @@ body {
 }
 
 .checkbox-wrapper:hover .checkmark {
-    border-color: #ff6b35;
+    border-color: #3b82f6;
 }
 
 .checkbox-wrapper input[type="checkbox"]:checked ~ .checkmark {
-    background-color: #ff6b35;
-    border-color: #ff6b35;
+    background-color: #3b82f6;
+    border-color: #3b82f6;
 }
 
 .checkmark::after {
@@ -896,7 +896,7 @@ body {
 }
 
 .checkbox-text a {
-    color: #ff6b35;
+    color: #3b82f6;
     text-decoration: none;
     font-weight: 600;
 }
@@ -931,7 +931,7 @@ body {
 }
 
 .btn-primary {
-    background: #ff6b35;
+    background: #3b82f6;
     color: white;
     box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
 }
@@ -944,8 +944,8 @@ body {
 
 .btn-secondary {
     background: white;
-    color: #ff6b35;
-    border: 2px solid #ff6b35;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
 }
 
 .btn-secondary:hover {
@@ -982,7 +982,7 @@ body {
 }
 
 .step-card:hover {
-    border-color: #ff6b35;
+    border-color: #3b82f6;
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
 }
@@ -990,7 +990,7 @@ body {
 .step-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    background: linear-gradient(135deg, #3b82f6, #ff8c42);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1086,7 +1086,7 @@ body {
 }
 
 .footer-brand i {
-    color: #ff6b35;
+    color: #3b82f6;
     font-size: 28px;
 }
 
@@ -1115,7 +1115,7 @@ body {
 }
 
 .social-links a:hover {
-    background: #ff6b35;
+    background: #3b82f6;
     transform: translateY(-2px);
 }
 
@@ -1141,7 +1141,7 @@ body {
 }
 
 .footer-section ul li a:hover {
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 .footer-bottom {
@@ -1166,7 +1166,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: #ff6b35;
+    color: #3b82f6;
 }
 
 /* Responsive Design */
@@ -1311,7 +1311,7 @@ body {
 
 .loading-spinner {
     border: 3px solid #f3f3f3;
-    border-top: 3px solid #ff6b35;
+    border-top: 3px solid #3b82f6;
     border-radius: 50%;
     width: 24px;
     height: 24px;
