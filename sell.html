@@ -43,12 +43,27 @@
                 </div>
                 
                 <div class="nav-actions">
-                    <a href="help.html" class="nav-link">Help</a>
-                    <a href="login.html" class="btn-login">Sign in</a>
-                </div>
+                    <!-- shown when user is NOT logged in -->
+                    <div id="authActions" style="display:flex; gap:8px; align-items:center;">
+                      <a href="help.html" class="nav-link">Help</a>
+                      <a href="login.html" class="btn-secondary btn-login">Sign in</a>
+                    </div>
+          
+                    <!-- shown when user IS logged in -->
+                    <div id="userMenu" style="display:none; gap:10px; align-items:center;">
+                      <img id="userAvatar" src="https://www.transparentpng.com/download/user/gray-user-profile-icon-png-fP8Q1P.png" alt="avatar" style="width:36px;height:36px;border-radius:50%;">
+                      <span id="userNameElm" style="font-weight:600">Hi, User</span>
+                      <a href="signin.html" id="loginLink" class="btn-login">Sign In</a>
+                      <button id="logoutBtn" class="btn-logout" style="display:none;">Logout</button>
+
+
+                    </div>
+                  </div>
+          
             </div>
         </nav>
     </header>
+   
 
     <!-- Hero Section -->
     <section class="sell-hero">
@@ -582,5 +597,6 @@
     </footer>
 
     <script src="sell.js"></script>
+
 </body>
 </html>

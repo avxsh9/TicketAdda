@@ -34,6 +34,71 @@ const formData = {
   agreeTransfer: false
 };
 
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import { app } from "./firebase.js"; // apna firebase init file
+
+const auth = getAuth(app);
+
+const loginLink = document.getElementById("loginLink");
+const logoutBtn = document.getElementById("logoutBtn");
+
+// Listen for auth state
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // Agar user login hai → Sign In hatao, Logout dikhao
+    if (loginLink) loginLink.style.display = "none";
+    if (logoutBtn) logoutBtn.style.display = "flex";
+  } else {
+    // Agar login nahi hai → Logout hatao, Sign In dikhao
+    if (loginLink) loginLink.style.display = "flex";
+    if (logoutBtn) logoutBtn.style.display = "none";
+  }
+});
+
+// Logout
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    signOut(auth).then(() => {
+      console.log("User logged out");
+      window.location.href = "index.html"; // redirect after logout
+    }).catch((error) => {
+      console.error("Logout error:", error);
+    });
+  });
+}
+
+
+
+
+  // ✅ User state check
+  onAuthStateChanged(auth, (user) => {
+    const signinBtn = document.getElementById("signinBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (user) {
+      // Agar logged in hai
+      if (signinBtn) signinBtn.style.display = "none";
+      if (logoutBtn) logoutBtn.style.display = "block";
+    } else {
+      // Agar logged out hai
+      if (signinBtn) signinBtn.style.display = "block";
+      if (logoutBtn) logoutBtn.style.display = "none";
+    }
+  });
+
+  // ✅ Logout button ka handler
+  document.addEventListener("DOMContentLoaded", () => {
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", () => {
+        signOut(auth).then(() => {
+          window.location.href = "index.html"; // logout ke baad redirect
+        });
+      });
+    }
+  });
+
+
 // undo/redo minimal stacks
 const undoStack = [];
 const redoStack = [];
