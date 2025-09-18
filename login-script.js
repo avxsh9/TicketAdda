@@ -1,284 +1,209 @@
-// Login Page JavaScript
+// login-script.js
+// Module script — uses Firebase v12 (web modular SDK)
 
-document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.getElementById('loginForm');
-    const passwordInput = document.getElementById('loginPassword');
-    const passwordToggle = document.getElementById('passwordToggle');
+// Firebase imports
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import {
+  getAuth,
+  setPersistence,
+  browserLocalPersistence,
+  browserSessionPersistence,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
-    // Password visibility toggle
-    passwordToggle.addEventListener('click', function() {
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-        
-        const icon = passwordToggle.querySelector('i');
-        icon.classList.toggle('fa-eye');
-        icon.classList.toggle('fa-eye-slash');
+// Firebase config (same as signup)
+const firebaseConfig = {
+  apiKey: "AIzaSyDSPYXYwrxaVTna2CfFI2EktEysXb7z5iE",
+  authDomain: "ticketaddda.firebaseapp.com",
+  projectId: "ticketaddda",
+  storageBucket: "ticketaddda.firebasestorage.app",
+  messagingSenderId: "987839286443",
+  appId: "1:987839286443:web:235ed8857cd8cc8477fbee",
+  measurementId: "G-EDDVKVVXHS"
+};
+
+// init app safely (avoid double init)
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  // Elements
+  const loginForm = document.getElementById('loginForm');
+  const emailEl = document.getElementById('email');
+  const passwordEl = document.getElementById('password');
+  const togglePasswordBtn = document.getElementById('togglePassword');
+  const rememberEl = document.getElementById('rememberMe');
+  const submitBtn = document.getElementById('submitBtn');
+  const googleBtn = document.getElementById('googleSignInBtn');
+  const fbBtn = document.getElementById('facebookSignInBtn');
+  const forgotLink = document.querySelector('.forgot-link');
+
+  if (!loginForm) return; // nothing to do if form missing
+
+  // Password visibility toggle
+  if (togglePasswordBtn && passwordEl) {
+    togglePasswordBtn.addEventListener('click', () => {
+      const icon = togglePasswordBtn.querySelector('i');
+      if (passwordEl.type === 'password') {
+        passwordEl.type = 'text';
+        if (icon) { icon.classList.remove('fa-eye'); icon.classList.add('fa-eye-slash'); }
+      } else {
+        passwordEl.type = 'password';
+        if (icon) { icon.classList.remove('fa-eye-slash'); icon.classList.add('fa-eye'); }
+      }
     });
+  }
 
-    // Real-time validation
-    const inputs = {
-        email: document.getElementById('loginEmail'),
-        password: passwordInput
-    };
+  // Inline validation helpers
+  const inputs = { email: emailEl, password: passwordEl };
+  function showError(name, msg) {
+    const el = document.getElementById(name + 'Error');
+    if (el) { el.textContent = msg; el.classList.add('show'); }
+    if (inputs[name]) inputs[name].classList.add('error');
+  }
+  function clearError(name) {
+    const el = document.getElementById(name + 'Error');
+    if (el) { el.textContent = ''; el.classList.remove('show'); }
+    if (inputs[name]) inputs[name].classList.remove('error');
+  }
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
 
-    // Add blur event listeners for real-time validation
-    Object.keys(inputs).forEach(fieldName => {
-        inputs[fieldName].addEventListener('blur', () => validateField(fieldName));
-        inputs[fieldName].addEventListener('input', () => clearError(fieldName));
-    });
+  Object.keys(inputs).forEach(k => {
+    const el = inputs[k];
+    if (!el) return;
+    el.addEventListener('blur', () => validateField(k));
+    el.addEventListener('input', () => clearError(k));
+  });
 
-    // Form submission
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        if (validateForm()) {
-            submitForm();
-        }
-    });
+  function validateField(field) {
+    const el = inputs[field];
+    if (!el) return false;
+    const v = el.value.trim();
+    if (field === 'email') {
+      if (!v) { showError('email', 'Email is required'); return false; }
+      if (!isValidEmail(v)) { showError('email', 'Enter a valid email'); return false; }
+    }
+    if (field === 'password') {
+      if (!v) { showError('password', 'Password is required'); return false; }
+      if (v.length < 6) { showError('password', 'Password must be at least 6 characters'); return false; }
+    }
+    return true;
+  }
 
-    function validateField(fieldName) {
-        const field = inputs[fieldName];
-        const value = field.value.trim();
-        
-        clearError(fieldName);
-        
-        switch (fieldName) {
-            case 'email':
-                if (!value) {
-                    showError('email', 'Email address is required');
-                    return false;
-                } else if (!isValidEmail(value)) {
-                    showError('email', 'Please enter a valid email address');
-                    return false;
-                }
-                break;
-                
-            case 'password':
-                if (!value) {
-                    showError('password', 'Password is required');
-                    return false;
-                } else if (value.length < 6) {
-                    showError('password', 'Password must be at least 6 characters long');
-                    return false;
-                }
-                break;
-        }
-        
-        return true;
+  function validateForm() {
+    let ok = true;
+    Object.keys(inputs).forEach(k => { if (!validateField(k)) ok = false; });
+    return ok;
+  }
+
+  // Submit handler
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearError('email'); clearError('password');
+
+    if (!validateForm()) return;
+
+    const email = emailEl.value.trim();
+    const password = passwordEl.value;
+    const remember = !!(rememberEl && rememberEl.checked);
+
+    // set persistence according to remember checkbox
+    try {
+      await setPersistence(auth, remember ? browserLocalPersistence : browserSessionPersistence);
+    } catch (err) {
+      console.warn('setPersistence failed, falling back to default:', err);
+      // continue; sign-in will still attempt
     }
 
-    function validateForm() {
-        let isValid = true;
-        
-        // Validate all fields
-        Object.keys(inputs).forEach(fieldName => {
-            if (!validateField(fieldName)) {
-                isValid = false;
-            }
-        });
-        
-        return isValid;
+    // UI feedback
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Signing In...`;
     }
 
-    function showError(fieldName, message) {
-        const errorElement = document.getElementById(fieldName + 'Error');
-        const fieldElement = inputs[fieldName];
-        
-        if (errorElement) {
-            errorElement.textContent = message;
-            errorElement.classList.add('show');
-        }
-        
-        if (fieldElement) {
-            fieldElement.classList.add('error');
-        }
+    try {
+      const userCred = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCred.user;
+      console.log('Login success:', user);
+
+      // show success + redirect
+      showSuccessMessage(user.email);
+    } catch (err) {
+      console.error('Login error:', err);
+      // friendly messages
+      const code = err.code || '';
+      let msg = err.message || 'Login failed';
+      if (code === 'auth/wrong-password') msg = 'Incorrect password. Try again.';
+      if (code === 'auth/user-not-found') msg = 'No account found with this email.';
+      if (code === 'auth/too-many-requests') msg = 'Too many attempts. Try again later.';
+      alert('❌ ' + msg);
+
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.innerText = 'Sign In'; }
     }
+  });
 
-    function clearError(fieldName) {
-        const errorElement = document.getElementById(fieldName + 'Error');
-        const fieldElement = inputs[fieldName];
-        
-        if (errorElement) {
-            errorElement.classList.remove('show');
-        }
-        
-        if (fieldElement) {
-            fieldElement.classList.remove('error');
-        }
-    }
-
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    function submitForm() {
-        const submitBtn = document.querySelector('.login-submit-btn');
-        const btnText = submitBtn.querySelector('.btn-text');
-        const btnIcon = submitBtn.querySelector('.btn-icon');
-        
-        // Show loading state
-        submitBtn.disabled = true;
-        btnText.textContent = 'Signing In...';
-        btnIcon.className = 'fas fa-spinner fa-spin btn-icon';
-        
-        // Simulate API call
-        setTimeout(() => {
-            // Collect form data
-            const formData = {
-                email: inputs.email.value.trim(),
-                password: inputs.password.value,
-                rememberMe: document.getElementById('rememberMe').checked,
-                timestamp: new Date().toISOString()
-            };
-            
-            // In a real application, you would send this data to your backend
-            console.log('Login attempted with data:', formData);
-            
-            // Simulate successful login
-            showSuccessMessage();
-            
-        }, 1500);
-    }
-
-    function showSuccessMessage() {
-        const formContainer = document.querySelector('.login-form-container');
-        
-        formContainer.innerHTML = `
-            <div class="success-message">
-                <div class="success-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h2 class="success-title">Welcome Back!</h2>
-                <p class="success-text">
-                    You have successfully signed in to your TicketAdda account. 
-                    Redirecting you to your dashboard...
-                </p>
-                <div class="success-actions">
-                    <a href="index.html" class="btn-primary">Go to Dashboard</a>
-                    <a href="index.html#categories" class="btn-secondary">Browse Events</a>
-                </div>
-            </div>
-        `;
-        
-        // Add success message styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .success-message {
-                text-align: center;
-                padding: 40px 20px;
-            }
-            
-            .success-icon {
-                font-size: 4rem;
-                color: #27ae60;
-                margin-bottom: 20px;
-            }
-            
-            .success-title {
-                font-size: 1.8rem;
-                font-weight: 700;
-                color: #1a1a1a;
-                margin-bottom: 15px;
-            }
-            
-            .success-text {
-                font-size: 1rem;
-                color: #666;
-                line-height: 1.6;
-                margin-bottom: 30px;
-            }
-            
-            .success-actions {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .success-actions .btn-primary,
-            .success-actions .btn-secondary {
-                display: inline-block;
-                padding: 14px 24px;
-                border-radius: 10px;
-                text-decoration: none;
-                font-weight: 600;
-                transition: all 0.3s ease;
-            }
-            
-            .success-actions .btn-primary {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-            }
-            
-            .success-actions .btn-secondary {
-                background: transparent;
-                color: #667eea;
-                border: 2px solid #667eea;
-            }
-            
-            .success-actions .btn-primary:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-            }
-            
-            .success-actions .btn-secondary:hover {
-                background: #667eea;
-                color: white;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Auto-redirect after 3 seconds
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 3000);
-    }
-
-    // Social login handlers
-    document.querySelector('.google-btn').addEventListener('click', function() {
-        // In a real application, integrate with Google OAuth
-        console.log('Google login clicked');
-        alert('Google login will be implemented with OAuth integration');
+  // Google sign-in (popup)
+  if (googleBtn) {
+    googleBtn.addEventListener('click', async () => {
+      const provider = new GoogleAuthProvider();
+      try {
+        // use local persistence by default for social logins if remember checked
+        await setPersistence(auth, (rememberEl && rememberEl.checked) ? browserLocalPersistence : browserSessionPersistence);
+        const result = await signInWithPopup(auth, provider);
+        console.log('Google sign in result:', result);
+        showSuccessMessage(result.user.email || result.user.displayName || '');
+      } catch (err) {
+        console.error('Google sign-in failed:', err);
+        alert('Google sign-in failed: ' + (err.message || err));
+      }
     });
+  }
 
-    document.querySelector('.facebook-btn').addEventListener('click', function() {
-        // In a real application, integrate with Facebook OAuth
-        console.log('Facebook login clicked');
-        alert('Facebook login will be implemented with OAuth integration');
+  // Facebook button placeholder
+  if (fbBtn) {
+    fbBtn.addEventListener('click', () => {
+      alert('Facebook sign-in not wired in this build. You can add FacebookAuthProvider config in Firebase console and implement signInWithPopup similarly.');
     });
+  }
 
-    // Forgot password handler
-    document.querySelector('.forgot-password').addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const email = inputs.email.value.trim();
-        
-        if (!email) {
-            alert('Please enter your email address first, then click "Forgot password?"');
-            inputs.email.focus();
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            alert('Please enter a valid email address first, then click "Forgot password?"');
-            inputs.email.focus();
-            return;
-        }
-        
-        // In a real application, you would send a password reset email
-        alert(`Password reset instructions have been sent to ${email}`);
-    });
-});
+  // Forgot password flow
+  if (forgotLink) {
+    forgotLink.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const email = emailEl.value.trim();
+      if (!email) { alert('Enter your email first to receive password reset link.'); return; }
+      if (!isValidEmail(email)) { alert('Enter a valid email first.'); return; }
 
-// Smooth animations for form interactions
-document.querySelectorAll('.form-input').forEach(input => {
-    input.addEventListener('focus', function() {
-        this.parentNode.classList.add('focused');
+      try {
+        await sendPasswordResetEmail(auth, email);
+        alert(`📩 Password reset link sent to ${email}`);
+      } catch (err) {
+        console.error('Password reset error:', err);
+        alert('Failed to send reset link: ' + (err.message || err));
+      }
     });
-    
-    input.addEventListener('blur', function() {
-        if (!this.value) {
-            this.parentNode.classList.remove('focused');
-        }
-    });
+  }
+
+  // success UI
+  function showSuccessMessage(userEmail) {
+    const formContainer = document.querySelector('.form-content');
+    if (!formContainer) {
+      window.location.href = 'index.html';
+      return;
+    }
+    formContainer.innerHTML = `
+      <div class="success-message">
+        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+        <h2 class="success-title">Welcome Back!</h2>
+        <p class="success-text">You are logged in as <b>${userEmail || ''}</b>.<br>Redirecting to homepage...</p>
+      </div>
+    `;
+    setTimeout(() => { window.location.href = 'index.html'; }, 1000);
+  }
 });

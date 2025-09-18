@@ -55,7 +55,7 @@
                             <div class="input-wrapper">
                                 <i class="fas fa-lock"></i>
                                 <input type="password" id="password" name="password" placeholder="Create a strong password" required>
-                                <button type="button" class="toggle-password" data-target="password">
+                                <button type="button" class="toggle-password" data-target="password" aria-label="Toggle password visibility">
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
@@ -71,10 +71,14 @@
                             <div class="input-wrapper">
                                 <i class="fas fa-check-circle"></i>
                                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                                <button type="button" class="toggle-password" data-target="confirmPassword" aria-label="Toggle confirm password visibility">
+                                    <i class="fas fa-eye"></i>
+                                </button>
                             </div>
                             <div class="form-error" id="confirmPasswordError"></div>
                         </div>
-                        
+                    
+                          
                         <div class="form-group">
                             <label class="checkbox-wrapper">
                                 <input type="checkbox" id="terms" required>
@@ -89,7 +93,7 @@
                         <div class="divider"><span>OR</span></div>
                         
                         <div class="social-buttons">
-                             <button type="button" class="btn-social">
+                             <button type="button" class="btn-social google-btn">
                                 <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
                                 Sign up with Google
                             </button>
@@ -144,6 +148,8 @@
         </div>
     </div>
     
-    <script src="signup-script.js"></script>
+    <!-- Use module script for Firebase imports -->
+    <script type="module" src="signup-script.js"></script>
+
 </body>
 </html>
