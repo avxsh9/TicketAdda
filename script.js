@@ -398,4 +398,7 @@ function q(sel) { try { return document.querySelector(sel); } catch(e) { return 
     });
 }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
