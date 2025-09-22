@@ -1,0 +1,91 @@
+/* all-events.css */
+
+/* Page container */
+main {
+  padding: 40px 0;
+  background: #fafafa;
+}
+
+main h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #222;
+}
+
+/* Events grid layout */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Event card */
+.event-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Event image */
+.event-card .event-image {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.event-card .event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.event-card .event-price {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #ff4757;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Event details */
+.event-details {
+  padding: 16px;
+}
+
+.event-details .event-category {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.event-details .event-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 4px 0 8px;
+  color: #222;
+}
+
+.event-details .event-venue,
+.event-details .event-date {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 2px 0;
+}
