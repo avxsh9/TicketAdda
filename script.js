@@ -361,6 +361,41 @@ function debounce(fn, wait = 200) {
 // safe query helper
 function q(sel) { try { return document.querySelector(sel); } catch(e) { return null; } }
 
+<<<<<<< Updated upstream
 /* ==================================================================
    End of script.js
    ================================================================== */
+=======
+            if (isDecimal) {
+                // Format to one decimal place
+                counter.innerText = currentValue.toFixed(1);
+            } else {
+                // Format for whole numbers
+                counter.innerText = Math.floor(currentValue).toLocaleString();
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                // Set the final precise value with the suffix
+                counter.innerText = target.toLocaleString() + suffix;
+            }
+        };
+        requestAnimationFrame(step);
+    };
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.8 });
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+}
+
+>>>>>>> Stashed changes
