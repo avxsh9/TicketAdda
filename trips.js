@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Image data
   const images = [
-    'https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1029610/pexels-photo-1029610.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg?auto=compress&cs=tinysrgb&w=800'
+    'https://dwq3yv87q1b43.cloudfront.net/public/blogs/fit-in/1200x675/Blog_20240904-604846050-1725446044.jpg',
+    'https://uttarakhandtourism.gov.in/assets/media/UTDB_media_logo1745916342a5160ff72b8591a242f1fe76dc5fe7f3.jpg',
+    'https://s7ap1.scene7.com/is/image/incredibleindia/lakshman-jhula-bridge-rishikesh-uttrakhand-city-1-hero?qlt=82&ts=1726646259495',
+    'https://t.eucdn.in/tourism/lg-jpg/chopta-1867133.jpg',
+    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/76/a6/72/photo0jpg.jpg?w=800&h=500&s=1'
   ];
   
   // Initialize page
@@ -165,13 +165,13 @@ document.addEventListener('DOMContentLoaded', function() {
       return sum + (passes[passType].price * quantity);
     }, 0);
   
-    const processingFee = 200;
+    const processingFee = 50;
     const gst = Math.round((subtotal + processingFee) * 0.05);
-    const total = subtotal + processingFee + gst;
+    const total = subtotal + processingFee ;
   
     document.getElementById('subtotal').textContent = `₹${subtotal.toLocaleString()}`;
     document.getElementById('processingFee').textContent = `₹${processingFee.toLocaleString()}`;
-    document.getElementById('gst').textContent = `₹${gst.toLocaleString()}`;
+    // document.getElementById('gst').textContent = `₹${gst.toLocaleString()}`;
     document.getElementById('total').textContent = `₹${total.toLocaleString()}`;
   }
   

@@ -247,6 +247,7 @@ body {
 
 .trek-meta {
   display: flex;
+  margin-left: 30px;
   flex-direction: column;
   gap: 20px;
   margin-bottom: 32px;
@@ -279,6 +280,7 @@ body {
 }
 
 .trek-stats {
+    margin-left: 30px;
   display: flex;
   gap: 48px;
 }
@@ -788,10 +790,33 @@ body {
 }
 
 /* Sidebar */
-.trek-sidebar {
-  display: flex;
+/* .trek-sidebar {
+  display: block;
   flex-direction: column;
   gap: 24px;
+} */
+
+
+.trek-sidebar {
+    width: 300px; /* ya jo bhi sidebar width ho */
+}
+
+.sidebar-scroll {
+    max-height: 80vh; /* sidebar viewport ke 80% tak height */
+    overflow-y: auto; /* vertical scroll enable */
+    padding-right: 10px; /* scroll ke liye thodi space */
+}
+
+/* Optional: smooth scroll & hide default scrollbar if needed */
+.sidebar-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+.sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .cart-summary,
