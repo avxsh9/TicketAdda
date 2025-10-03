@@ -33,6 +33,15 @@ body {
     padding: 0;
 }
 
+.earning-calculator { max-width: 400px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+    .form-group { margin-bottom: 15px; }
+    .price-input { display: flex; align-items: center; gap: 5px; }
+    .price-input span { font-weight: bold; }
+    .price-input input { flex: 1; padding: 5px; }
+    .earnings-breakdown { margin-top: 20px; }
+    .breakdown-row { display: flex; justify-content: space-between; margin: 8px 0; }
+    .total { font-weight: bold; font-size: 18px; }
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;

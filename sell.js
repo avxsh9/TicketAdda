@@ -7,11 +7,8 @@
 // paymentProofUpload, paymentProofUploadPreview, eventName, eventCategory, eventDate, eventTime, venue, ticketSection, ticketRow, seatNumbers
 
 // ---------------- CONFIG ----------------
-const MAX_TOTAL = 100000; // ₹1,00,000 cap
 const PLATFORM_FEE_RATE = 0.03; // 3%
-const AUTO_SAVE_KEY = 'ticketadda_sell_draft_v1';
-const ALERT_ON_CAP = true; // show alert when cap hits
-const AUTOSAVE_INTERVAL_MS = 8000;
+  const MAX_TOTAL = 100000; 
 
 // ---------------- STATE -----------------
 let currentStep = 1;
@@ -182,37 +179,36 @@ document.addEventListener('DOMContentLoaded', () => {
   loadAutosave();
   updatePreview();
 });
-
-// ---------------- CALCULATOR ----------------
-function initializeCalculator() {
-  const priceInput = el('ticketPrice');
-  const qtyInput = el('ticketQuantity');
-  if (priceInput) priceInput.addEventListener('input', debounce(heroCalcChanged, 150, 'hero'));
-  if (qtyInput) { qtyInput.addEventListener('change', heroCalcChanged); qtyInput.addEventListener('input', debounce(heroCalcChanged, 150, 'hero')); }
-  heroCalcChanged();
+// helper functions
+function formatINR(num) {
+  return "₹" + num.toLocaleString("en-IN");
 }
 
-function heroCalcChanged() {
-  const price = safeInt(el('ticketPrice') ? el('ticketPrice').value : formData.ticketPrice, 0);
-  const quantity = safeInt(el('ticketQuantity') ? el('ticketQuantity').value : formData.ticketQuantity, 1);
 
-  formData.ticketPrice = price;
-  formData.ticketQuantity = quantity;
+function calculate() {
+  let price = parseInt(document.getElementById("ticketPrice").value) || 0;
+  let qty = parseInt(document.getElementById("ticketQuantity").value) || 1;
 
-  let totalSale = price * quantity;
+  let totalSale = price * qty;
   if (totalSale > MAX_TOTAL) {
     totalSale = MAX_TOTAL;
-    if (ALERT_ON_CAP && !window.__cap_alert_shown) { window.__cap_alert_shown = true; setTimeout(()=>window.__cap_alert_shown=false,1500); alert('Maximum calculation cap is ' + formatINR(MAX_TOTAL) + '.'); }
+    if (ALERT_ON_CAP) alert("Maximum calculation cap is " + formatINR(MAX_TOTAL));
   }
-  const platformFee = Math.round(totalSale * PLATFORM_FEE_RATE);
-  const earnings = totalSale - platformFee;
 
-  if (el('totalSale')) el('totalSale').textContent = formatINR(totalSale);
-  if (el('platformFee')) el('platformFee').textContent = formatINR(platformFee);
-  if (el('youEarn')) el('youEarn').textContent = formatINR(earnings);
+  let platformFee = Math.round(totalSale * PLATFORM_FEE_RATE);
+  let earnings = totalSale - platformFee;
 
-  updatePreview();
+  document.getElementById("totalSale").textContent = formatINR(totalSale);
+  document.getElementById("platformFee").textContent = formatINR(platformFee);
+  document.getElementById("youEarn").textContent = formatINR(earnings);
 }
+
+// event listeners
+document.getElementById("ticketPrice").addEventListener("input", calculate);
+document.getElementById("ticketQuantity").addEventListener("input", calculate);
+
+// init run
+calculate();
 
 // ---------------- FORM ----------------
 function initializeForm() {

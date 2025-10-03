@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tungnath Trek - 4 Days Adventure Package | TicketAdda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="trips.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-brand">
+                    <img class="avinashlogo" src="logo png.png" alt="TicketAdda">
+                </a>
+                <div class="nav-search">
+                    <!-- <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search events, artists, teams, or venues" id="mainSearch">
+                        <button class="search-btn">Search</button>
+                    </div> -->
+                </div>
+                <div class="nav-menu">
+                    <a href="events.html" class="nav-link">Sports</a>
+                    <a href="trips.html" class="nav-link">Trips</a>
+                    <a href="events.html" class="nav-link">Theater</a>
+                    <a href="sell.html" class="nav-link sell-link">
+                        <i class="fas fa-plus-circle"></i>
+                        Sell
+                    </a>
+                </div>
+                <div class="nav-actions">
+                    <a href="help.html" class="nav-link">Help</a>
+                    <a href="login.html" class="btn-login">Sign in</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Trek Header -->
+    <section class="trek-header">
+        <div class="container">
+            <div class="trek-header-content">
+                <div class="trek-info">
+                    <div class="trek-category">
+                        <span class="category-badge">Adventure Trek</span>
+                        <span class="trek-type">4 Days Package</span>
+                    </div>
+                    <h1 class="trek-title">Tungnath Temple & Chandrashila Trek</h1>
+
+                    <div class="trek-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>World's Highest Shiva Temple</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-hiking"></i>
+                            <span>Moderate Difficulty</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-ruler-vertical"></i>
+                            <span>3,680m - 4,000m Altitude</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-star"></i>
+                            <span>360° Himalayan Views</span>
+                        </div>
+                    </div>
+
+                    <div class="trek-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <strong>Next Batch</strong>
+                                <span>Starting 15 Nov 2025</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Duration</strong>
+                                <span>4 Days / 3 Nights</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Starting Point</strong>
+                                <span>Rishikesh, Uttarakhand</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trek-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">45</span>
+                            <span class="stat-label">Spots Available</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">₹5,000</span>
+                            <span class="stat-label">Per Person</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number trending">
+                                <i class="fas fa-fire"></i>
+                                Trending
+                            </span>
+                            <span class="stat-label">Popular Trek</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trek-gallery">
+                    <div class="main-image">
+                        <img src="https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Tungnath Trek" id="mainTrekImage">
+                    </div>
+                    <div class="thumbnail-grid">
+                        <img src="https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=400"
+                            alt="View 1" class="thumbnail active" onclick="changeTrekImage(this, 0)">
+                        <img src="https://images.pexels.com/photos/1029610/pexels-photo-1029610.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="View 2" class="thumbnail" onclick="changeTrekImage(this, 1)">
+                        <img src="https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="View 3" class="thumbnail" onclick="changeTrekImage(this, 2)">
+                        <img src="https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="View 4" class="thumbnail" onclick="changeTrekImage(this, 3)">
+                        <img src="https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="View 5" class="thumbnail" onclick="changeTrekImage(this, 4)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Trek Details -->
+                <div class="trek-content">
+                    <!-- Overview -->
+                    <div class="trek-section">
+                        <h2>About This Trek</h2>
+                        <p class="trek-description">
+                            Embark on a spiritual and adventurous journey to Tungnath, the highest Shiva temple in the
+                            world, located at an altitude of 3,680 meters. This 4-day trek takes you through lush
+                            meadows, ancient forests, and offers breathtaking views of the Himalayan peaks including
+                            Nanda Devi, Trishul, and Chaukhamba.
+                        </p>
+
+                        <div class="trek-features">
+                            <div class="feature-card">
+                                <i class="fas fa-check-circle"></i>
+                                <h4>All Meals Included</h4>
+                                <p>Breakfast, Lunch & Dinner</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-campground"></i>
+                                <h4>Accommodation</h4>
+                                <p>Camps & Guesthouses</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-user-tie"></i>
+                                <h4>Expert Guides</h4>
+                                <p>Certified Trek Leaders</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Safety Equipment</h4>
+                                <p>First Aid & Oxygen</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Itinerary -->
+                    <div class="trek-section">
+                        <h2>Day-wise Itinerary</h2>
+                        <div class="itinerary-timeline">
+                            <div class="itinerary-day">
+                                <div class="day-number">Day 1</div>
+                                <div class="day-content">
+                                    <h3>Rishikesh to Chopta</h3>
+                                    <p>Drive from Rishikesh to Chopta (220 km, 8-9 hours). En route, visit Devprayag and
+                                        enjoy scenic views. Overnight stay in Chopta camps.</p>
+                                    <div class="day-meta">
+                                        <span><i class="fas fa-road"></i> 220 km Drive</span>
+                                        <span><i class="fas fa-bed"></i> Camp Stay</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-day">
+                                <div class="day-number">Day 2</div>
+                                <div class="day-content">
+                                    <h3>Chopta to Tungnath to Chandrashila</h3>
+                                    <p>Trek to Tungnath Temple (3.5 km, 3-4 hours) and further to Chandrashila Summit
+                                        (1.5 km, 1-2 hours). Return to Chopta. Witness spectacular sunrise views.</p>
+                                    <div class="day-meta">
+                                        <span><i class="fas fa-hiking"></i> 10 km Trek</span>
+                                        <span><i class="fas fa-mountain"></i> 4,000m Altitude</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-day">
+                                <div class="day-number">Day 3</div>
+                                <div class="day-content">
+                                    <h3>Chopta Exploration & Deoria Tal</h3>
+                                    <p>Optional trek to Deoria Tal (2.5 km). Explore the beautiful meadows of Chopta.
+                                        Evening bonfire and cultural activities.</p>
+                                    <div class="day-meta">
+                                        <span><i class="fas fa-hiking"></i> 5 km Trek</span>
+                                        <span><i class="fas fa-fire"></i> Bonfire Night</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-day">
+                                <div class="day-number">Day 4</div>
+                                <div class="day-content">
+                                    <h3>Chopta to Rishikesh</h3>
+                                    <p>Morning leisure time. Drive back to Rishikesh with beautiful memories. Trek ends
+                                        with drop at Rishikesh.</p>
+                                    <div class="day-meta">
+                                        <span><i class="fas fa-road"></i> 220 km Drive</span>
+                                        <span><i class="fas fa-flag-checkered"></i> Trek End</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pass Options -->
+                    <div class="trek-section">
+                        <h2>Select Your Pass</h2>
+                        <p class="section-subtitle">Choose the option that best suits your group</p>
+
+                        <div class="pass-options">
+                            <!-- Solo Pass -->
+                            <div class="pass-card" data-pass="solo">
+                                <div class="pass-icon">👤</div>
+                                <h3>Solo Traveler</h3>
+                                <div class="pass-price">
+                                    <span class="price-amount">₹5,000</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                                <ul class="pass-features">
+                                    <li><i class="fas fa-check"></i> Single occupancy option</li>
+                                    <li><i class="fas fa-check"></i> All meals included</li>
+                                    <li><i class="fas fa-check"></i> Trek equipment provided</li>
+                                    <li><i class="fas fa-check"></i> Experienced guide</li>
+                                </ul>
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" data-pass="solo" onclick="updateQuantity('solo', -1)">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="qty-display" data-pass="solo">0</span>
+                                    <button class="qty-btn plus" data-pass="solo" onclick="updateQuantity('solo', 1)">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="availability-info">20 passes available</div>
+                            </div>
+
+                            <!-- Couple Pass -->
+                            <div class="pass-card featured" data-pass="couple">
+                                <div class="featured-badge">Best Value</div>
+                                <div class="pass-icon">❤️</div>
+                                <h3>Couple Package</h3>
+                                <div class="pass-price">
+                                    <span class="price-amount">₹9,500</span>
+                                    <span class="price-label">for 2 people</span>
+                                    <span class="price-save">Save ₹500</span>
+                                </div>
+                                <ul class="pass-features">
+                                    <li><i class="fas fa-check"></i> Shared accommodation</li>
+                                    <li><i class="fas fa-check"></i> All meals included</li>
+                                    <li><i class="fas fa-check"></i> Trek equipment for both</li>
+                                    <li><i class="fas fa-check"></i> Romantic bonfire experience</li>
+                                    <li><i class="fas fa-check"></i> Free couple photography</li>
+                                </ul>
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" data-pass="couple"
+                                        onclick="updateQuantity('couple', -1)">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="qty-display" data-pass="couple">0</span>
+                                    <button class="qty-btn plus" data-pass="couple"
+                                        onclick="updateQuantity('couple', 1)">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="availability-info">10 passes available</div>
+                            </div>
+
+                            <!-- Group Pass -->
+                            <div class="pass-card" data-pass="group">
+                                <div class="pass-icon">👥</div>
+                                <h3>Group Package</h3>
+                                <div class="pass-price">
+                                    <span class="price-amount">₹45,000</span>
+                                    <span class="price-label">for 10 people</span>
+                                    <span class="price-save">Save ₹5,000</span>
+                                </div>
+                                <ul class="pass-features">
+                                    <li><i class="fas fa-check"></i> Group accommodation</li>
+                                    <li><i class="fas fa-check"></i> All meals included</li>
+                                    <li><i class="fas fa-check"></i> Equipment for all members</li>
+                                    <li><i class="fas fa-check"></i> Dedicated group guide</li>
+                                    <li><i class="fas fa-check"></i> Team building activities</li>
+                                    <li><i class="fas fa-check"></i> Group photos & videos</li>
+                                </ul>
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" data-pass="group"
+                                        onclick="updateQuantity('group', -1)">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="qty-display" data-pass="group">0</span>
+                                    <button class="qty-btn plus" data-pass="group" onclick="updateQuantity('group', 1)">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="availability-info">3 passes available</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What's Included -->
+                    <div class="trek-section">
+                        <h2>What's Included</h2>
+                        <div class="included-grid">
+                            <div class="included-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Transportation from Rishikesh and back</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Accommodation in camps and guesthouses</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>All meals (breakfast, lunch, dinner, snacks)</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Experienced trek leader and support staff</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>First aid kit and oxygen cylinder</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Trekking permits and forest fees</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Sleeping bags and tents</span>
+                            </div>
+                            <div class="included-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Evening bonfire and activities</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What to Carry -->
+                    <div class="trek-section">
+                        <h2>What to Carry</h2>
+                        <div class="carry-categories">
+                            <div class="carry-category">
+                                <h4><i class="fas fa-tshirt"></i> Clothing</h4>
+                                <ul>
+                                    <li>Warm layers (thermal innerwear)</li>
+                                    <li>Waterproof jacket</li>
+                                    <li>Trekking pants (2-3)</li>
+                                    <li>Woolen cap and gloves</li>
+                                    <li>Sun hat and sunglasses</li>
+                                </ul>
+                            </div>
+                            <div class="carry-category">
+                                <h4><i class="fas fa-shoe-prints"></i> Footwear</h4>
+                                <ul>
+                                    <li>Trekking shoes (waterproof)</li>
+                                    <li>Camp shoes or sandals</li>
+                                    <li>Woolen socks (4-5 pairs)</li>
+                                </ul>
+                            </div>
+                            <div class="carry-category">
+                                <h4><i class="fas fa-backpack"></i> Accessories</h4>
+                                <ul>
+                                    <li>Backpack (40-50L)</li>
+                                    <li>Water bottles (2L capacity)</li>
+                                    <li>Headlamp with extra batteries</li>
+                                    <li>Personal toiletries</li>
+                                    <li>Personal medicines</li>
+                                </ul>
+                            </div>
+                            <div class="carry-category">
+                                <h4><i class="fas fa-file-alt"></i> Documents</h4>
+                                <ul>
+                                    <li>Valid ID proof (Aadhar/Passport)</li>
+                                    <li>Medical certificate (if required)</li>
+                                    <li>Travel insurance (recommended)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="trek-sidebar">
+                    <!-- Cart Summary -->
+                    <div class="cart-summary">
+                        <h3>Your Booking</h3>
+                        <div class="cart-empty" id="cartEmpty">
+                            <i class="fas fa-mountain"></i>
+                            <p>No passes selected</p>
+                            <span>Select passes to continue</span>
+                        </div>
+                        <div class="cart-items" id="cartItems" style="display: none;"></div>
+                        <div class="cart-total" id="cartTotal" style="display: none;">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span id="subtotal">₹0</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Processing fee</span>
+                                <span id="processingFee">₹200</span>
+                            </div>
+                            <div class="total-row">
+                                <span>GST (5%)</span>
+                                <span id="gst">₹0</span>
+                            </div>
+                            <div class="total-row total">
+                                <span>Total</span>
+                                <span id="total">₹0</span>
+                            </div>
+                            <button class="checkout-btn" onclick="proceedToCheckout()">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Trek Info -->
+                    <div class="info-card">
+                        <h3>Important Information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-heart-pulse"></i>
+                            <div>
+                                <strong>Fitness Level</strong>
+                                <span>Moderate fitness required</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Age Limit</strong>
+                                <span>12 to 55 years</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-cloud-sun"></i>
+                            <div>
+                                <strong>Best Season</strong>
+                                <span>April-Nov (except monsoon)</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <strong>Not Suitable For</strong>
+                                <span>Pregnant women, heart patients</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-undo"></i>
+                            <div>
+                                <strong>Cancellation</strong>
+                                <span>Free up to 15 days before</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="info-card">
+                        <h3>Safety & Trust</h3>
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <i class="fas fa-shield-check"></i>
+                                <span>Certified Trek Operators</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Trained Trek Leaders</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-first-aid"></i>
+                                <span>Emergency Support 24/7</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-star"></i>
+                                <span>4.8/5 Rating (2,500+ reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="info-card">
+                        <h3>Need Help?</h3>
+                        <a href="tel:+919876543210" class="contact-btn">
+                            <i class="fas fa-phone"></i>
+                            +91 98765 43210
+                        </a>
+                        <a href="mailto:trek@ticketadda.com" class="contact-btn">
+                            <i class="fas fa-envelope"></i>
+                            trek@ticketadda.com
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img class="avinashlogo" src="image (1).png" alt="TicketAdda">
+                    </div>
+                    <p>India's most trusted ticket marketplace for concerts, sports, theater, and more.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Buy tickets</h4>
+                    <ul>
+                        <li><a href="events.html?category=concerts">Concerts</a></li>
+                        <li><a href="events.html?category=sports">Sports</a></li>
+                        <li><a href="events.html?category=theater">Theater</a></li>
+                        <li><a href="trips.html">Adventure</a></li>
+                        <li><a href="events.html">All events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sell tickets</h4>
+                    <ul>
+                        <li><a href="sell.html">Sell tickets</a></li>
+                        <li><a href="help.html">How to sell</a></li>
+                        <li><a href="help.html">Pricing</a></li>
+                        <li><a href="help.html">Seller protection</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help center</a></li>
+                        <li><a href="help.html">Contact us</a></li>
+                        <li><a href="help.html">TicketAdda Guarantee</a></li>
+                        <li><a href="terms.html">Terms of use</a></li>
+                        <li><a href="privacy.html">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="help.html">Help</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="trips.js"></script>
+</body>
+
+</html>
