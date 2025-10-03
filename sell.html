@@ -9,21 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="sell.css">
-    <link rel="stylesheet" href="style.css">
-    
-    
-    <link rel="icon" type="image/png" href="https://i.imgur.com/g8e1m5b.png">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <a href="index.html" class="nav-brand">
-                    <img class="avinashlogo" src="logo png.png" alt="">
+                    <img class="avinashlogo" src="logo png.png" alt="TicketAdda">
                 </a>
-                
-                
+
                 <div class="nav-search">
                     <!-- <div class="search-bar">
                         <i class="fas fa-search"></i>
@@ -31,7 +25,7 @@
                         <button class="search-btn">Search</button>
                     </div> -->
                 </div>
-                
+
                 <div class="nav-menu">
                     <a href="sports.html" class="nav-link">Sports</a>
                     <a href="trips.html" class="nav-link">Trip</a>
@@ -41,38 +35,22 @@
                         Sell
                     </a>
                 </div>
-                
+
                 <div class="nav-actions">
-                    <!-- shown when user is NOT logged in -->
-                    <div id="authActions" style="display:flex; gap:8px; align-items:center;">
-                      <a href="help.html" class="nav-link">Help</a>
-                      <a href="login.html" class="btn-secondary btn-login">Sign in</a>
-                    </div>
-          
-                    <!-- shown when user IS logged in -->
-                    <div id="userMenu" style="display:none; gap:10px; align-items:center;">
-                      <img id="userAvatar" src="https://www.transparentpng.com/download/user/gray-user-profile-icon-png-fP8Q1P.png" alt="avatar" style="width:36px;height:36px;border-radius:50%;">
-                      <span id="userNameElm" style="font-weight:600">Hi, User</span>
-                      <a href="signin.html" id="loginLink" class="btn-login">Sign In</a>
-                      <button id="logoutBtn" class="btn-logout" style="display:none;">Logout</button>
-
-
-                    </div>
-                  </div>
-          
+                    <a href="help.html" class="nav-link">Help</a>
+                    <a href="login.html" class="btn-login">Sign in</a>
+                </div>
             </div>
         </nav>
     </header>
-   
 
-    <!-- Hero Section -->
     <section class="sell-hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Turn your tickets into cash</h1>
                     <p>List your tickets for free and get paid within 24 hours of sale. Our platform handles everything from buyer verification to secure payments.</p>
-                    
+
                     <div class="selling-benefits">
                         <div class="benefit">
                             <i class="fas fa-rupee-sign"></i>
@@ -91,7 +69,7 @@
                             <span>Millions of buyers</span>
                         </div>
                     </div>
-                    
+
                     <div class="cta-buttons">
                         <button class="btn-primary btn-large" onclick="scrollToForm()">
                             Start selling now
@@ -101,59 +79,58 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="hero-visual">
                     <div class="earning-calculator">
-                      <h3>Earnings Calculator</h3>
-                      <div class="calculator-form">
-                        <div class="form-group">
-                          <label>Ticket price</label>
-                          <div class="price-input">
-                            <span>₹</span>
-                            <input type="number" id="ticketPrice" value="2500" min="100" max="50000">
-                          </div>
+                        <h3>Earnings Calculator</h3>
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label>Ticket price</label>
+                                <div class="price-input">
+                                    <span>₹</span>
+                                    <input type="number" id="ticketPrice" value="2500" min="100" max="50000">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Quantity</label>
+                                <select id="ticketQuantity">
+                                    <option value="1">1 ticket</option>
+                                    <option value="2" selected>2 tickets</option>
+                                    <option value="3">3 tickets</option>
+                                    <option value="4">4 tickets</option>
+                                    <option value="5">5 tickets</option>
+                                    <option value="6">6 tickets</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                          <label>Quantity</label>
-                          <select id="ticketQuantity">
-                            <option value="1">1 ticket</option>
-                            <option value="2" selected>2 tickets</option>
-                            <option value="3">3 tickets</option>
-                            <option value="4">4 tickets</option>
-                            <option value="5">5 tickets</option>
-                            <option value="6">6 tickets</option>
-                          </select>
+
+                        <div class="earnings-breakdown">
+                            <div class="breakdown-row">
+                                <span>Total sale</span>
+                                <span id="totalSale">₹5,000</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>TicketAdda fee (3%)</span>
+                                <span id="platformFee">₹150</span>
+                            </div>
+                            <div class="breakdown-row total">
+                                <span>You earn</span>
+                                <span id="youEarn">₹4,850</span>
+                            </div>
                         </div>
-                      </div>
-                      
-                      <div class="earnings-breakdown">
-                        <div class="breakdown-row">
-                          <span>Total sale</span>
-                          <span id="totalSale">₹5,000</span>
-                        </div>
-                        <div class="breakdown-row">
-                          <span>TicketAdda fee (3%)</span>
-                          <span id="platformFee">₹150</span>
-                        </div>
-                        <div class="breakdown-row total">
-                          <span>You earn</span>
-                          <span id="youEarn">₹4,850</span>
-                        </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sell Form Section -->
     <section class="sell-form-section" id="sellForm">
         <div class="container">
             <div class="form-header">
                 <h2>List your tickets</h2>
                 <p>Complete the form below to list your tickets. It takes less than 2 minutes!</p>
             </div>
-            
+
             <div class="sell-form-container">
                 <div class="progress-indicator">
                     <div class="step active" data-step="1">
@@ -173,21 +150,21 @@
                         <span>Review</span>
                     </div>
                 </div>
-                
-                <form class="sell-form" id="ticketListingForm">
-                    <!-- Step 1: Event Details -->
+
+                <form class="sell-form" id="ticketListingForm" novalidate>
                     <div class="form-step active" data-step="1">
                         <h3>Tell us about your event</h3>
-                        
+
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="eventName">Event name *</label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-ticket-alt"></i>
-                                    <input type="text" id="eventName" name="eventName" placeholder="e.g., Mumbai Indians vs Chennai Super Kings" required>
+                                    <input type="text" id="eventName" name="eventName" placeholder="e.g., Mumbai Indians vs Chennai Super Kings" required autocomplete="off">
                                 </div>
+                                <div id="eventSuggestions" class="suggestions-dropdown"></div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="eventCategory">Category *</label>
                                 <div class="input-wrapper">
@@ -203,7 +180,7 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="eventDate">Event date *</label>
                                 <div class="input-wrapper">
@@ -211,7 +188,7 @@
                                     <input type="date" id="eventDate" name="eventDate" required>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="eventTime">Event time</label>
                                 <div class="input-wrapper">
@@ -219,7 +196,7 @@
                                     <input type="time" id="eventTime" name="eventTime">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group full-width">
                                 <label for="venue">Venue *</label>
                                 <div class="input-wrapper">
@@ -229,11 +206,10 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Step 2: Ticket Information -->
+
                     <div class="form-step" data-step="2">
                         <h3>Ticket details</h3>
-                        
+
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="ticketSection">Section/Category</label>
@@ -242,7 +218,7 @@
                                     <input type="text" id="ticketSection" name="ticketSection" placeholder="e.g., VIP, General, East Stand">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="ticketRow">Row (optional)</label>
                                 <div class="input-wrapper">
@@ -250,12 +226,30 @@
                                     <input type="text" id="ticketRow" name="ticketRow" placeholder="e.g., Row A, Row 15">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="seatNumbers">Seat numbers (optional)</label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-chair"></i>
                                     <input type="text" id="seatNumbers" name="seatNumbers" placeholder="e.g., 12, 13, 14">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="quantity">How many tickets? *</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-hashtag"></i>
+                                    <select id="quantity" name="quantity" required>
+                                        <option value="">Select quantity</option>
+                                        <option value="1">1 ticket</option>
+                                        <option value="2">2 tickets</option>
+                                        <option value="3">3 tickets</option>
+                                        <option value="4">4 tickets</option>
+                                        <option value="5">5 tickets</option>
+                                        <option value="6">6 tickets</option>
+                                        <option value="7">7 tickets</option>
+                                        <option value="8">8 tickets</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -285,25 +279,7 @@
                                     <div class="file-preview" id="paymentProofUploadPreview"></div>
                                 </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="quantity">How many tickets? *</label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-hashtag"></i>
-                                    <select id="quantity" name="quantity" required>
-                                        <option value="">Select quantity</option>
-                                        <option value="1">1 ticket</option>
-                                        <option value="2">2 tickets</option>
-                                        <option value="3">3 tickets</option>
-                                        <option value="4">4 tickets</option>
-                                        <option value="5">5 tickets</option>
-                                        <option value="6">6 tickets</option>
-                                        <option value="7">7 tickets</option>
-                                        <option value="8">8 tickets</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
+
                             <div class="form-group full-width">
                                 <label for="ticketType">Ticket type *</label>
                                 <div class="ticket-type-options">
@@ -327,11 +303,10 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Step 3: Pricing -->
+
                     <div class="form-step" data-step="3">
                         <h3>Set your price</h3>
-                        
+
                         <div class="pricing-section">
                             <div class="pricing-form">
                                 <div class="form-group">
@@ -342,7 +317,7 @@
                                         <span class="per-ticket">per ticket</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="pricing-suggestions">
                                     <h4>Suggested pricing</h4>
                                     <div class="suggestion-buttons">
@@ -356,7 +331,7 @@
                                     </p>
                                 </div>
                             </div>
-                            
+
                             <div class="earnings-preview">
                                 <h4>Earnings breakdown</h4>
                                 <div class="earnings-table">
@@ -373,7 +348,7 @@
                                         <span id="previewTotal">₹0</span>
                                     </div>
                                     <div class="earnings-row">
-                                        <span>TicketAdda fee (3%)</span>
+                                        <span>TicketAdda fee (2%)</span>
                                         <span id="previewFee">₹0</span>
                                     </div>
                                     <div class="earnings-row total">
@@ -381,7 +356,7 @@
                                         <span id="previewEarnings">₹0</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="payment-info">
                                     <i class="fas fa-info-circle"></i>
                                     <span>Payment will be transferred to your bank account within 24 hours of sale</span>
@@ -389,18 +364,17 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Step 4: Review -->
+
                     <div class="form-step" data-step="4">
                         <h3>Review your listing</h3>
-                        
+
                         <div class="listing-preview">
                             <div class="preview-card">
                                 <div class="preview-header">
                                     <h4 id="previewEventName">Event Name</h4>
                                     <span class="preview-category" id="previewCategory">Category</span>
                                 </div>
-                                
+
                                 <div class="preview-details">
                                     <div class="detail-row">
                                         <i class="fas fa-calendar"></i>
@@ -418,21 +392,29 @@
                                         <i class="fas fa-rupee-sign"></i>
                                         <span id="previewPriceInfo">Price info</span>
                                     </div>
+                                    <div class="detail-row">
+                                        <i class="fas fa-file-image"></i>
+                                        <span id="previewTicketUpload">No ticket file provided</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                        <span id="previewPaymentProof">No proof file provided</span>
+                                    </div>
                                 </div>
                             </div>
-                            
+
                             <div class="terms-agreement">
                                 <label class="checkbox-wrapper">
-                                    <input type="checkbox" id="agreeTerms" required>
+                                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
                                     <span class="checkmark"></span>
                                     <span class="checkbox-text">
-                                        I agree to the <a href="#" target="_blank">Seller Terms</a> 
+                                        I agree to the <a href="#" target="_blank">Seller Terms</a>
                                         and confirm that I own these tickets
                                     </span>
                                 </label>
-                                
+
                                 <label class="checkbox-wrapper">
-                                    <input type="checkbox" id="agreeTransfer" required>
+                                    <input type="checkbox" id="agreeTransfer" name="agreeTransfer" required>
                                     <span class="checkmark"></span>
                                     <span class="checkbox-text">
                                         I understand that tickets will be transferred to buyers through TicketAdda's secure platform
@@ -441,8 +423,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Form Navigation -->
+
                     <div class="form-navigation">
                         <button type="button" class="btn-secondary" id="prevBtn" style="display: none;">
                             <i class="fas fa-arrow-left"></i>
@@ -462,7 +443,6 @@
         </div>
     </section>
 
-    <!-- How It Works -->
     <section class="how-it-works" id="how-it-works">
         <div class="container">
             <h2>How selling works</h2>
@@ -474,7 +454,7 @@
                     <h3>1. List your tickets</h3>
                     <p>Create your listing in under 2 minutes. Add event details, ticket information, and set your price.</p>
                 </div>
-                
+
                 <div class="step-card">
                     <div class="step-icon">
                         <i class="fas fa-users"></i>
@@ -482,7 +462,7 @@
                     <h3>2. Connect with buyers</h3>
                     <p>Our platform shows your tickets to millions of buyers. We handle all communication and verification.</p>
                 </div>
-                
+
                 <div class="step-card">
                     <div class="step-icon">
                         <i class="fas fa-handshake"></i>
@@ -490,7 +470,7 @@
                     <h3>3. Secure transfer</h3>
                     <p>When someone buys your tickets, we facilitate the secure transfer and handle payment processing.</p>
                 </div>
-                
+
                 <div class="step-card">
                     <div class="step-icon">
                         <i class="fas fa-money-bill-wave"></i>
@@ -502,7 +482,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
             <h2>Frequently asked questions</h2>
@@ -535,13 +514,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-brand">
-                        <img class="avinashlogo" src="image (1).png" alt="">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>TicketAdda</span>
                     </div>
                     <p>India's most trusted ticket marketplace for concerts, sports, theater, and more.</p>
                     <div class="social-links">
@@ -551,7 +530,7 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Buy tickets</h4>
                     <ul>
@@ -562,7 +541,7 @@
                         <li><a href="events.html">All events</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Sell tickets</h4>
                     <ul>
@@ -572,7 +551,7 @@
                         <li><a href="help.html">Seller protection</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Support</h4>
                     <ul>
@@ -584,7 +563,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 TicketAdda Technologies Pvt Ltd. All rights reserved.</p>
                 <div class="footer-links">
@@ -597,6 +576,5 @@
     </footer>
 
     <script src="sell.js"></script>
-
 </body>
 </html>

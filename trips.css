@@ -313,7 +313,7 @@ body {
 
 /* Trek Gallery */
 .trek-gallery {
-  display: flex;
+  height: 10px;
   flex-direction: column;
   gap: 12px;
 }
